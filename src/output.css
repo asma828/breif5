@@ -614,6 +614,22 @@ video {
   height: 6vh;
 }
 
+.h-\[\] {
+  height: ;
+}
+
+.h-\[20vh\] {
+  height: 20vh;
+}
+
+.h-\[vh\] {
+  height: vh;
+}
+
+.h-\[35vh\] {
+  height: 35vh;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -648,6 +664,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .rounded-full {
