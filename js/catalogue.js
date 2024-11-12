@@ -12,5 +12,5 @@ rightArrow.addEventListener("click",()=>{
 })
 leftArrow.addEventListener("click",()=>{
     sliderContainer.style.scrollBehavior = "smooth"
-    sliderContainer.scrollLeft -= sliderContainer.offsetWidth  * 1
+    sliderContainer.scrollLeft -= sliderContainer.offsetWidth  * 1.005
 })
