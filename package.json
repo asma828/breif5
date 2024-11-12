@@ -4,7 +4,8 @@
   "description": "The AUCHAN Shopping Center is creating a modern, user-friendly website to enhance the online shopping experience for its customers. The goal is to offer smooth, interactive browsing with convenient options for product collection. This project brings together a skilled team of designers and developers to meet current consumer demands for accessible online shopping.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "keywords": [],
   "author": "",
