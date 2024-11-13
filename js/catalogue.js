@@ -100,6 +100,6 @@ const paginate = (array, currenPage, sectionSize=4) => {
     const lastIndex = startIndex + sectionSize;
     return array.slice(startIndex, lastIndex);
 }
-const _4bookes = paginate(books,1,4)
-console.log(_4bookes);
-
+const totalOfpages = (array,sectionSize=4)=>{
+    return Math.ceil(array.length/sectionSize);
+}
