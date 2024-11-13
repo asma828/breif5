@@ -2,12 +2,11 @@
 
 ## Project Overview
 
-The AUCHAN Shopping Center is creating a modern, user-friendly website to enhance the online shopping experience for its customers. The goal is to offer smooth, interactive browsing with convenient options for product collection. This project brings together a skilled team of designers and developers to meet current consumer demands for accessible online shopping.
+The  AUCHAN Shopping Center is creating a modern, user-friendly website to enhance the online shopping experience for its customers. The goal is to offer smooth, interactive browsing with convenient options for product collection. This project brings together a skilled team of designers and developers to meet current consumer demands for accessible online shopping.
 
 ---
 
 ## Objective
-
 The main objective of this project is to build a website that allows customers to:
 
 - Browse products conveniently online.
