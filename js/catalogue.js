@@ -5,6 +5,8 @@ const Bookes = document.querySelector("#Bookes");
 const Clothes = document.querySelector("#Clothes");
 const list = document.querySelector("#list");
 const grid = document.querySelector("#grid");
+console.log(grid);
+
 let dispay = "gird";
 list.addEventListener("click", () => {
     dispay = "list";
@@ -12,7 +14,6 @@ list.addEventListener("click", () => {
 grid.addEventListener("click", () => {
     dispay = "grid";
 })
-
 // this section is for making the slider 
 const sliderContainer = document.querySelector("#sliderContainer");
 const leftArrow = document.querySelector("#leftArrow");
@@ -118,11 +119,118 @@ const paginate = (array, currenPage, sectionSize = 4) => {
 const totalOfpages = (array, sectionSize = 4) => {
     return Math.ceil(array.length / sectionSize);
 }
+
 const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
-    const ElectronicsCards= Electronics.querySelector("#cards").innerHTML = ""
-    const booksCards= Electronics.querySelector("#cards").innerHTML = ""
-    const foodCards= Electronics.querySelector("#cards").innerHTML = ""
-    const clothesCards= Electronics.querySelector("#cards").innerHTML = ""
+    const ElectronicsCards = Electronics.querySelector("#cards").innerHTML = ""
+    const booksCards = Electronics.querySelector("#cards").innerHTML = ""
+    const foodCards = Electronics.querySelector("#cards").innerHTML = ""
+    const clothesCards = Electronics.querySelector("#cards").innerHTML = ""
+    electronicArray.forEach(e => {
+        ElectronicsCards.innerHTML += `<div
+                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+                <div>
+                    <img src="${e.imgUrl}" alt="">
+                </div>
+                <div class="flex justify-around flex-col h-20">
+                    <div>
+                        ${e.name}
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="text-orange-400">
+                            $${e.price}
+                        </div>
+                        <button>
+                            <div
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <p>add to cart</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>`
+    });
+    foodAraay.forEach(e => {
+        foodCards.innerHTML += `<div
+                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+                <div>
+                    <img src="${e.imgUrl}" alt="">
+                </div>
+                <div class="flex justify-around flex-col h-20">
+                    <div>
+                        ${e.name}
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="text-orange-400">
+                            $${e.price}
+                        </div>
+                        <button>
+                            <div
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <p>add to cart</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>`
+    });
+    bookArray.forEach(e => {
+        booksCards.innerHTML += `<div
+                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+                <div>
+                    <img src="${e.imgUrl}" alt="">
+                </div>
+                <div class="flex justify-around flex-col h-20">
+                    <div>
+                        ${e.name}
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="text-orange-400">
+                            $${e.price}
+                        </div>
+                        <button>
+                            <div
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <p>add to cart</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>`
+    });
+    clothesArray.forEach(e => {
+        clothesCards.innerHTML += `<div
+                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+                <div>
+                    <img src="${e.imgUrl}" alt="">
+                </div>
+                <div class="flex justify-around flex-col h-20">
+                    <div>
+                        ${e.name}
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="text-orange-400">
+                            $${e.price}
+                        </div>
+                        <button>
+                            <div
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <p>add to cart</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>`
+    });
+}
+const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
+    const ElectronicsCards = Electronics.querySelector("#cards").innerHTML = ""
+    const booksCards = Electronics.querySelector("#cards").innerHTML = ""
+    const foodCards = Electronics.querySelector("#cards").innerHTML = ""
+    const clothesCards = Electronics.querySelector("#cards").innerHTML = ""
     electronicArray.forEach(e => {
         ElectronicsCards.innerHTML += `<div
                 class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
