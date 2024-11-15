@@ -11,30 +11,69 @@
 </head>
 
 <body>
-    <nav>
-        <div id="nav" class="flex w-full h-20 bg-merrakchi justify-around items-center">
-            <div>
-                <img src="/images/logo.png" alt="logo" class="w-20 h-auto">
+  <body class="flex flex-col h-screen">
+    <header>  
+        <nav>
+            <div id="nav" class="flex w-screen h-20 bg-merrakchi justify-around items-center">
+                <button id="burger_button" class="text-3xl burgerbutton white md:hidden">&#9776;</button>
+                <div class="h-[70px]">
+                    <img src="/images/logo_mobile.png" alt="logo" class="w-full h-full object-contain">
+                </div>
+                <div class="hidden md:block">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
+                </div>
+                <div class="w-40 flex justify-around">
+                    <i class="fa-solid fa-heart text-2xl text-white"></i>
+                    <i class="fa-solid fa-user text-2xl text-white"></i>
+                    <button id="cartIcon">
+                        <i class="fa-solid fa-cart-shopping text-2xl text-white"></i>
+                    </button>
+                </div>
             </div>
-            <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-4 pr-4 rounded-lg">
-                <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
-                <i class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+            <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
+                <a class="hidden md:block hover:text-orange-400" href="#">HOME</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CONTACT US</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CATALOGUE</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">PROMOTIONS</a>
+                <div class="block md:hidden">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
+                </div>
             </div>
-            <div class="w-40 flex justify-around">
-                <i class="fa-solid fa-heart text-2xl text-white"></i>
-                <i class="fa-solid fa-user text-2xl text-white"></i>
-                <button>
-                    <i class="fa-solid fa-cart-shopping text-2xl text-white"></i>
-                </button>
-            </div>
+        </nav>
+        <!-- burger menu -->
+        <div id="menu_burger"
+            class="fixed inset-0 bg-slate-700  text-white hidden z-50 flex flex-col items-center justify-center space-y-6">
+            <button id="button_to_close" class="absolute top-5 right-5 text-3xl text-white">&#10005;</button>
+            <a href="#" class="text-xl hover:text-orange-500">HOME</a>
+            <a href="#" class="text-xl hover:text-orange-500">CONTACT US</a>
+            <a href="#" class="text-xl hover:text-orange-500">CATALOGUE</a>
+            <a href="#" class="text-xl hover:text-orange-500">PROMOTIONS</a>
         </div>
-        <div id="nav_ico" class="w-full h-12 bg-gray-200 flex justify-around items-center font-bold relative text-sm md:text-base">
-          <a class="hover:text-orange-400" href="#">HOME</a>
-          <a class="hover:text-orange-400" href="#">PROMOTIONS</a>
-          <a class="hover:text-orange-400" href="#">CATALOGUE</a>
-          <a class="hover:text-orange-400" href="#">CONTACT US</a>
-        </div>
-    </nav>
+    </header>
+<div id="cart" class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-4 border-b flex justify-between items-center">
+        <h2 class="text-lg font-semibold">Mon Panier</h2>
+        <button id="closeCart" class="text-2xl font-bold">&times;</button>
+    </div>
+    <div id="cartItems" class="p-4">
+        <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
+    </div>
+    <div class="p-4 border-t flex justify-between">
+        <p>Total produits: <span id="cartTotalQuantity">0</span></p>
+        <p>Total: <span id="cartTotal">$0.00</span></p>
+    </div>
+    <div class="p-4">
+        <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
+    </div>
+</div>
 
     <section class="hero px-4">
       <div class="w-full h-[300px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-lg flex items-center justify-center text-center mb-4 mt-4" style="background-image: url(/images/sports-car-background\ 2\ \(1\).png);">
@@ -79,37 +118,43 @@
       </div>
 
       <div class="bg-[#335c70] text-white p-8 md:w-1/2">
-        <form class="space-y-4">
+        <form id="contactForm" class="space-y-4">
           <div class="flex flex-col md:flex-row md:space-x-4">
-            <div class="w-full md:w-1/2 mt-[25px]">
-              <label for="firstName" class="block text-sm m-[-12px]">TELL US YOUR NAME *</label>
-              <input type="text" id="firstName" placeholder="First Name" class="mt-6 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <div class="w-full md:w-1/2">
+              <label for="firstName" class="block text-sm">TELL US YOUR NAME *</label>
+              <input type="text" id="firstName" placeholder="First Name" class="mt-2 p-2 w-full bg-white text-black rounded-xl">
             </div>
             <div class="w-full md:w-1/2">
-              <label for="lastName" class="block text-sm md:invisible">Last Name</label>
-              <input type="text" id="lastName" placeholder="Last Name" class="mt-1 md:mt-6 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+              <label for="lastName" class="block text-sm">Last Name</label>
+              <input type="text" id="lastName" placeholder="Last Name" class="mt-2 p-2 w-full bg-white text-black rounded-xl">
             </div>
           </div>
-
+        
           <div>
             <label for="email" class="block text-sm">TELL US YOUR EMAIL *</label>
-            <input type="email" id="email" placeholder="Exemple@gmail.com" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <input type="email" id="email" placeholder="Exemple@gmail.com" class="mt-2 p-2 w-full bg-white text-black rounded-xl">
           </div>
-
+        
           <div>
             <label for="phone" class="block text-sm">ENTER PHONE NUMBER *</label>
-            <input type="text" id="phone" placeholder="+212-000000000" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <input type="text" id="phone" placeholder="+212-000000000" class="mt-2 p-2 w-full bg-white text-black rounded-xl">
           </div>
-
+        
           <div>
             <label for="message" class="block text-sm">MESSAGE *</label>
-            <textarea id="message" rows="4" placeholder="Write us a message" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]"></textarea>
+            <textarea id="message" rows="4" placeholder="Write us a message" class="mt-2 p-2 w-full bg-white text-black rounded-xl"></textarea>
           </div>
-
-          <button id="submitBtn" type="submit" class="w-full bg-[#ffa500] text-white font-semibold py-2 rounded-xl hover:bg-[#cc8400] transition-colors">
-            SEND MESSAGE
-          </button>
+        
+          <div class="flex space-x-4">
+            <button type="button" id="refillBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              Refill Form
+            </button>
+            <button type="submit" id="submitBtn" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+              Submit Form
+            </button>
+          </div>
         </form>
+        
       </div>
     </div>
 
@@ -150,5 +195,6 @@
       </div>
     </footer>
     <script src="/js/contact.js"></script>
+    <script src="/js/panier.js"></script>
 </body>
 </html>
