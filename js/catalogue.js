@@ -156,17 +156,17 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
     });
     foodAraay.forEach(e => {
         foodCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
-                    </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+        <div>
+        <img src="${e.imgUrl}" alt="">
+        </div>
+        <div class="flex justify-around flex-col h-20">
+        <div>
+        ${e.name}
+        </div>
+        <div class="w-full flex justify-between">
+        <div class="text-orange-400">
+        $${e.price}
                         </div>
                         <button>
                             <div
@@ -181,17 +181,17 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
     });
     bookArray.forEach(e => {
         booksCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
-                    </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+        <div>
+        <img src="${e.imgUrl}" alt="">
+        </div>
+        <div class="flex justify-around flex-col h-20">
+        <div>
+        ${e.name}
+        </div>
+        <div class="w-full flex justify-between">
+        <div class="text-orange-400">
+        $${e.price}
                         </div>
                         <button>
                             <div
@@ -206,17 +206,17 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
     });
     clothesArray.forEach(e => {
         clothesCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
-                    </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+        <div>
+        <img src="${e.imgUrl}" alt="">
+        </div>
+        <div class="flex justify-around flex-col h-20">
+        <div>
+        ${e.name}
+        </div>
+        <div class="w-full flex justify-between">
+        <div class="text-orange-400">
+        $${e.price}
                         </div>
                         <button>
                             <div
@@ -233,6 +233,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
 const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
     const ElectronicsCards = Electronics.querySelector("#cards")
     const booksCards = Bookes.querySelector("#cards")
+    console.log(booksCards);
     const foodCards = Food.querySelector("#cards")
     const clothesCards = Clothes.querySelector("#cards")
     ElectronicsCards.innerHTML = "";
@@ -240,7 +241,7 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
     foodCards.innerHTML = "";
     clothesCards.innerHTML = "";
     console.log(electronicArray);
-    
+
     electronicArray.forEach(e => {
         ElectronicsCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
                     <div class="w-2/5">
@@ -266,79 +267,76 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                 </div>`
     });
     foodAraay.forEach(e => {
-        foodCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
+        foodCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
+                    <div class="w-2/5">
+                        <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+                    <div class="flex justify-around flex-col h-20">
+                        <div>
+                            ${e.name}
                         </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
+                        <div class="w-full flex justify-between">
+                            <div class="text-orange-400">
+                                $${e.price}
                             </div>
-                        </button>
+                            <button>
+                                <div
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    <p>add to cart</p>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
     });
     bookArray.forEach(e => {
-        booksCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
+        booksCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
+                    <div class="w-2/5">
+                        <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+                    <div class="flex justify-around flex-col h-20">
+                        <div>
+                            ${e.name}
                         </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
+                        <div class="w-full flex justify-between">
+                            <div class="text-orange-400">
+                                $${e.price}
                             </div>
-                        </button>
+                            <button>
+                                <div
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    <p>add to cart</p>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
     });
     clothesArray.forEach(e => {
-        clothesCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
+        clothesCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
+                    <div class="w-2/5">
+                        <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+                    <div class="flex justify-around flex-col h-20">
+                        <div>
+                            ${e.name}
                         </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
+                        <div class="w-full flex justify-between">
+                            <div class="text-orange-400">
+                                $${e.price}
                             </div>
-                        </button>
+                            <button>
+                                <div
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    <p>add to cart</p>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
     });
 }
 
