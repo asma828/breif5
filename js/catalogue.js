@@ -5,15 +5,10 @@ const Bookes = document.querySelector("#Bookes");
 const Clothes = document.querySelector("#Clothes");
 const list = document.querySelector("#list");
 const grid = document.querySelector("#grid");
-console.log(grid);
+const numbers = document.querySelector("#numbers");
 
-let dispay = "gird";
-list.addEventListener("click", () => {
-    dispay = "list";
-})
-grid.addEventListener("click", () => {
-    dispay = "grid";
-})
+let display = "gird";
+
 // this section is for making the slider 
 const sliderContainer = document.querySelector("#sliderContainer");
 const leftArrow = document.querySelector("#leftArrow");
@@ -111,7 +106,7 @@ const food = products.filter(elements => elements.category == "food");
 const clothes = products.filter(elements => elements.category == "clothes");
 
 // next function is for paginate the array of products 
-const paginate = (array, currenPage, sectionSize = 4) => {
+const paginate = (array, currenPage = 1, sectionSize = 4) => {
     const startIndex = (currenPage - 1) * sectionSize;
     const lastIndex = startIndex + sectionSize;
     return array.slice(startIndex, lastIndex);
@@ -119,25 +114,34 @@ const paginate = (array, currenPage, sectionSize = 4) => {
 const totalOfpages = (array, sectionSize = 4) => {
     return Math.ceil(array.length / sectionSize);
 }
+// add numbers in the list of pages
+let lastnumbers = totalOfpages(books)
+for (let index = 0; index < lastnumbers; index++) {
+    numbers.innerHTML += `<button class="text-lg font-bold mx-4">${index + 1}</button>`
+}
 
 const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
-    const ElectronicsCards = Electronics.querySelector("#cards").innerHTML = ""
-    const booksCards = Electronics.querySelector("#cards").innerHTML = ""
-    const foodCards = Electronics.querySelector("#cards").innerHTML = ""
-    const clothesCards = Electronics.querySelector("#cards").innerHTML = ""
+    const ElectronicsCards = Electronics.querySelector("#cards")
+    const booksCards = Bookes.querySelector("#cards")
+    const foodCards = Food.querySelector("#cards")
+    const clothesCards = Clothes.querySelector("#cards")
+    ElectronicsCards.innerHTML = "";
+    booksCards.innerHTML = "";
+    foodCards.innerHTML = "";
+    clothesCards.innerHTML = "";
     electronicArray.forEach(e => {
         ElectronicsCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
-                    </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+        <div>
+        <img src="${e.imgUrl}" alt="">
+        </div>
+        <div class="flex justify-around flex-col h-20">
+        <div>
+        ${e.name}
+        </div>
+        <div class="w-full flex justify-between">
+        <div class="text-orange-400">
+        $${e.price}
                         </div>
                         <button>
                             <div
@@ -148,7 +152,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </button>
                     </div>
                 </div>
-            </div>`
+            </div>`;
     });
     foodAraay.forEach(e => {
         foodCards.innerHTML += `<div
@@ -173,7 +177,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </button>
                     </div>
                 </div>
-            </div>`
+            </div>`;
     });
     bookArray.forEach(e => {
         booksCards.innerHTML += `<div
@@ -198,7 +202,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </button>
                     </div>
                 </div>
-            </div>`
+            </div>`;
     });
     clothesArray.forEach(e => {
         clothesCards.innerHTML += `<div
@@ -223,38 +227,43 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </button>
                     </div>
                 </div>
-            </div>`
+            </div>`;
     });
 }
 const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
-    const ElectronicsCards = Electronics.querySelector("#cards").innerHTML = ""
-    const booksCards = Electronics.querySelector("#cards").innerHTML = ""
-    const foodCards = Electronics.querySelector("#cards").innerHTML = ""
-    const clothesCards = Electronics.querySelector("#cards").innerHTML = ""
+    const ElectronicsCards = Electronics.querySelector("#cards")
+    const booksCards = Bookes.querySelector("#cards")
+    const foodCards = Food.querySelector("#cards")
+    const clothesCards = Clothes.querySelector("#cards")
+    ElectronicsCards.innerHTML = "";
+    booksCards.innerHTML = "";
+    foodCards.innerHTML = "";
+    clothesCards.innerHTML = "";
+    console.log(electronicArray);
+    
     electronicArray.forEach(e => {
-        ElectronicsCards.innerHTML += `<div
-                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-                <div>
-                    <img src="${e.imgUrl}" alt="">
-                </div>
-                <div class="flex justify-around flex-col h-20">
-                    <div>
-                        ${e.name}
+        ElectronicsCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
+                    <div class="w-2/5">
+                        <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="w-full flex justify-between">
-                        <div class="text-orange-400">
-                            $${e.price}
+                    <div class="flex justify-around flex-col h-20">
+                        <div>
+                            ${e.name}
                         </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
+                        <div class="w-full flex justify-between">
+                            <div class="text-orange-400">
+                                $${e.price}
                             </div>
-                        </button>
+                            <button>
+                                <div
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    <p>add to cart</p>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
     });
     foodAraay.forEach(e => {
         foodCards.innerHTML += `<div
@@ -332,3 +341,39 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
             </div>`
     });
 }
+
+list.addEventListener("click", () => {
+    display = "list";
+    if (display == "grid") {
+        const pagenatedBooks = paginate(books);
+        const pagenatedClothes = paginate(clothes);
+        const pagenatedElecrtonics = paginate(elecrtonics);
+        const pagenatedFood = paginate(food);
+        displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+    }
+    else if (display == "list") {
+        const pagenatedBooks = paginate(books);
+        const pagenatedClothes = paginate(clothes);
+        const pagenatedElecrtonics = paginate(elecrtonics);
+        const pagenatedFood = paginate(food);
+        displaylist(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+    }
+})
+grid.addEventListener("click", () => {
+    display = "grid";
+    if (display == "grid") {
+        const pagenatedBooks = paginate(books);
+        const pagenatedClothes = paginate(clothes);
+        const pagenatedElecrtonics = paginate(elecrtonics);
+        const pagenatedFood = paginate(food);
+
+        displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+    }
+    else if (display == "list") {
+        const pagenatedBooks = paginate(books);
+        const pagenatedClothes = paginate(clothes);
+        const pagenatedElecrtonics = paginate(elecrtonics);
+        const pagenatedFood = paginate(food);
+        displaylist(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+    }
+})

@@ -725,6 +725,11 @@ video {
   margin-right: auto;
 }
 
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .my-\[1em\] {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -881,8 +886,8 @@ video {
   height: 350px;
 }
 
-.h-\[45vh\] {
-  height: 45vh;
+.h-\[65vh\] {
+  height: 65vh;
 }
 
 .h-\[7vh\] {
