@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer Example</title>
+  <title>Contact Us</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/pages/Home.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <body>
     <nav>
-        <div id="nav" class="flex w-screen h-20 bg-merrakchi justify-around items-center">
+        <div id="nav" class="flex w-full h-20 bg-merrakchi justify-around items-center">
             <div>
-                <img src="/images/logo.png" alt="logo">
+                <img src="/images/logo.png" alt="logo" class="w-20 h-auto">
             </div>
-            <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+            <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-4 pr-4 rounded-lg">
                 <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
-                <i
-                    class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                <i class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
             </div>
-            <div class="w-40  flex justify-around">
+            <div class="w-40 flex justify-around">
                 <i class="fa-solid fa-heart text-2xl text-white"></i>
                 <i class="fa-solid fa-user text-2xl text-white"></i>
                 <button>
@@ -29,25 +28,26 @@
                 </button>
             </div>
         </div>
-        <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
-          <a class="hover:text-orange-400 tr" href="#">HOME</a>
+        <div id="nav_ico" class="w-full h-12 bg-gray-200 flex justify-around items-center font-bold relative text-sm md:text-base">
+          <a class="hover:text-orange-400" href="#">HOME</a>
           <a class="hover:text-orange-400" href="#">PROMOTIONS</a>
           <a class="hover:text-orange-400" href="#">CATALOGUE</a>
           <a class="hover:text-orange-400" href="#">CONTACT US</a>
-      </div>
+        </div>
     </nav>
-    <section class="hero">
-      <div class="w-[1406px] h-[500px] bg-cover bg-center bg-no-repeat rounded-lg flex items-center justify-center text-center mb-4 mt-4" style="background-image: url(/images/sports-car-background\ 2\ \(1\).png);">
+
+    <section class="hero px-4">
+      <div class="w-full h-[300px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-lg flex items-center justify-center text-center mb-4 mt-4" style="background-image: url(/images/sports-car-background\ 2\ \(1\).png);">
         <div class="px-4 md:px-0 max-w-3xl">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">Get In Touch With Us</h1>
-          <p class="text-xl md:text-2xl font-medium text-white leading-relaxed">
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 text-white">Get In Touch With Us</h1>
+          <p class="text-lg md:text-2xl font-medium text-white leading-relaxed">
             Didn't find what you're looking for? We'd love to hear from you. Fill out the form below, and we'll get back to you soon.
           </p>
         </div>
       </div>
     </section>
-    
-    <div class="flex flex-col md:flex-row mb-4">
+
+    <div class="flex flex-col md:flex-row md:space-x-0 mb-4 px-4">
       <div class="bg-[#2b4a5a] text-white p-8 md:w-1/2 space-y-8">
         <div class="flex items-start space-x-4">
           <i class="bi bi-geo-alt text-2xl"></i>
@@ -56,8 +56,7 @@
             <p>Belleville Center, 07 Safi, Morocco</p>
           </div>
         </div>
-    
-        <!-- Phone -->
+
         <div class="flex items-start space-x-4">
           <i class="bi bi-telephone text-2xl"></i>
           <div>
@@ -65,8 +64,7 @@
             <p>+212-600000000</p>
           </div>
         </div>
-    
-        <!-- Email -->
+
         <div class="flex items-start space-x-4">
           <i class="bi bi-envelope text-2xl"></i>
           <div>
@@ -74,62 +72,53 @@
             <p>EsayCar@gmail.com</p>
           </div>
         </div>
-    
-        <!-- Logo -->
+
         <div class="mt-8">
-          <img src="/images/E-_1-removebg-preview.png" alt="E-Commerce Logo" class="w-32 h-auto">
+          <img src="/images/E-_1-removebg-preview.png" alt="E-Commerce Logo" class="w-40">
         </div>
       </div>
-    
-      <!-- Right Section (Contact Form) with Lighter Background -->
+
       <div class="bg-[#335c70] text-white p-8 md:w-1/2">
         <form class="space-y-4">
-          <!-- Name Fields -->
-          <div class="flex space-x-4">
-            <div class="w-1/2">
-              <label for="firstName" class="block text-sm">TELL US YOUR NAME *</label>
-              <input type="text" id="firstName" placeholder="First Name" class="mt-1 p-2 w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+          <div class="flex flex-col md:flex-row md:space-x-4">
+            <div class="w-full md:w-1/2 mt-[25px]">
+              <label for="firstName" class="block text-sm m-[-12px]">TELL US YOUR NAME *</label>
+              <input type="text" id="firstName" placeholder="First Name" class="mt-6 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
             </div>
-            <div class="w-1/2">
-              <input type="text" placeholder="Last Name" class="mt-7 p-2 w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <div class="w-full md:w-1/2">
+              <label for="lastName" class="block text-sm md:invisible">Last Name</label>
+              <input type="text" id="lastName" placeholder="Last Name" class="mt-1 md:mt-6 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
             </div>
           </div>
-    
-          <!-- Email Field -->
+
           <div>
             <label for="email" class="block text-sm">TELL US YOUR EMAIL *</label>
-            <input type="email" id="email" placeholder="Exemple@gmail.com" class="mt-1 p-2 w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <input type="email" id="email" placeholder="Exemple@gmail.com" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
           </div>
-    
-          <!-- Phone Number Field -->
+
           <div>
-            <label for="phone" class="block text-sm">ENTRE PHONE NUMBER *</label>
-            <input type="text" id="phone" placeholder="+212-000000000" class="mt-1 p-2 w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
+            <label for="phone" class="block text-sm">ENTER PHONE NUMBER *</label>
+            <input type="text" id="phone" placeholder="+212-000000000" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]">
           </div>
-    
-          <!-- Message Field -->
+
           <div>
             <label for="message" class="block text-sm">MESSAGE *</label>
-            <textarea id="message" rows="4" placeholder="Write us a message" class="mt-1 p-2 w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffa500]"></textarea>
+            <textarea id="message" rows="4" placeholder="Write us a message" class="mt-1 p-2 w-full bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-[#ffa500]"></textarea>
           </div>
-    
-          <!-- Submit Button -->
-          <button type="submit" class="w-full bg-[#ffa500] text-white font-semibold py-2 rounded-md hover:bg-[#cc8400] transition-colors">
+
+          <button id="submitBtn" type="submit" class="w-full bg-[#ffa500] text-white font-semibold py-2 rounded-xl hover:bg-[#cc8400] transition-colors">
             SEND MESSAGE
           </button>
         </form>
       </div>
     </div>
-    
-    <!-- footer section  -->
-    <footer class="bg-[#2e5163] text-gray-200 py-12">
-      <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
-        <!-- image for the Logo -->
+
+    <footer class="bg-[#2e5163] text-gray-200 py-12 px-4">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
         <div class="flex flex-col items-start">
-          <img src="/images/E-_1-removebg-preview.png" alt="E-commerce Logo" class="w-50 h-20 mb-2">
+          <img src="/images/E-_1-removebg-preview.png" alt="E-commerce Logo" class="w-20 md:w-50 h-auto mb-2">
         </div>
         <div class="flex flex-col items-start">
-          <!-- links dial l explore -->
           <h3 class="font-semibold text-lg">Explore</h3>
           <ul class="mt-2 space-y-1">
             <li><a href="#" class="hover:underline">About Us</a></li>
@@ -139,7 +128,6 @@
           </ul>
         </div>
         <div class="hidden md:block border-r border-gray-400 h-20"></div>
-        <!-- links dial social media -->
         <div class="flex flex-col items-start">
           <h3 class="font-semibold text-lg">Social Media</h3>
           <ul class="mt-2 space-y-1">
@@ -150,7 +138,6 @@
           </ul>
         </div>
         <div class="hidden md:block border-r border-gray-400 h-20"></div>
-        <!-- links dial l contact us -->
         <div class="flex flex-col items-start">
           <h3 class="font-semibold text-lg">Contact Us</h3>
           <ul class="mt-2 space-y-1">
@@ -162,10 +149,6 @@
         </div>
       </div>
     </footer>
-    
-
-  <!-- includiw lbootstrap 3la wd l icons its easier bhalka -->
-
+    <script src="/js/contact.js"></script>
 </body>
-
 </html>
