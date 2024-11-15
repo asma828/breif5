@@ -24,3 +24,7 @@ function addToCart(name, price, imageSrc) {
         });
     }
 }
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+}
