@@ -1,0 +1,340 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "img": "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
+            "name": "Harry Potter and the Sorcerer's Stone",
+            "price": 19,
+            "category": "book"
+        },
+        {
+            "id": 2,
+            "img": "https://www.bibdsl.co.uk/imagegallery/bookdata/cd427/9780261103252.JPG",
+            "name": "The Lord of the Rings",
+            "price": 91,
+            "category": "book"
+        },
+        {
+            "id": 3,
+            "img": "https://th.bing.com/th/id/OIP.NXy__tPr2YhXWRZV6mv24QHaK6?rs=1&pid=ImgDetMain",
+            "name": "The Little Prince",
+            "price": 9.99,
+            "category": "book"
+        },
+        {
+            "id": 4,
+            "img": "https://th.bing.com/th/id/R.83faee62ce743bd44ee38c35a7fd4848?rik=kg0dM8OX1tNblw&pid=ImgRaw&r=0",
+            "name": "1984",
+            "price": 12.99,
+            "category": "book"
+        },
+        {
+            "id": 5,
+            "img": "https://i.thenile.io/r1000/9780008144227.jpg?r=5f43a5d7710f7",
+            "name": "The Alchemist",
+            "price": 10.99,
+            "category": "book"
+        },
+        {
+            "id": 6,
+            "img": "https://th.bing.com/th/id/R.9a1148dcd77be7ff4a134e9f8b0f9718?rik=%2bovZzx%2fuYQ%2bjSQ&pid=ImgRaw&r=0",
+            "name": "Pride and Prejudice",
+            "price": 8.99,
+            "category": "book"
+        },
+        {
+            "id": 7,
+            "img": "https://th.bing.com/th/id/R.f7e5c7570632139e507465d0ded2d039?rik=0Yq7RmebXz4jfw&pid=ImgRaw&r=0",
+            "name": "The Count of Monte Cristo",
+            "price": 14.99,
+            "category": "book"
+        },
+        {
+            "id": 8,
+            "img": "https://th.bing.com/th/id/R.5b59e0885d8091068eefc098f720b51d?rik=DY%2fqFLat2l4G0Q&pid=ImgRaw&r=0",
+            "name": "To Kill a Mockingbird",
+            "price": 10.49,
+            "category": "book"
+        },
+        {
+            "id": 9,
+            "img": "https://www.themoviedb.org/t/p/original/ixULCtFsL5azArovcuvJfnPaNHb.jpg",
+            "name": "The Old Man and the Sea",
+            "price": 8.99,
+            "category": "book"
+        },
+        {
+            "id": 10,
+            "img": "https://www.themoviedb.org/t/p/original/aHVE5TqPzJZuwSxNPv99yDmiJii.jpg",
+            "name": "A mystery set in a medieval monastery",
+            "price": 14.99,
+            "category": "book"
+        },
+        {
+            "id": 11,
+            "img": "https://dwcp78yw3i6ob.cloudfront.net/wp-content/uploads/2016/12/09134609/Fahrenheit451.jpg",
+            "name": "A dystopia where books are burned to control ideas",
+            "price": 9.99,
+            "category": "book"
+        },
+        {
+            "id": 12,
+            "img": "https://media.themoviedb.org/t/p/w500/zOsPAIRyknuPhYpFV0nTzbVLlgM.jpg",
+            "name": "The humorous adventures of Little Nicolas.",
+            "price": 85,
+            "category": "book"
+        },
+        {
+            "id": 13,
+            "img": "https://m.media-amazon.com/images/I/61g1mQPO+sL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Maruchan Ramen Chicken, Instant Ramen Noodles",
+            "price": 7.5,
+            "category": "food"
+        },
+        {
+            "id": 14,
+            "img": "https://m.media-amazon.com/images/I/715kw5O-11L._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Kraft Easy Mac Original Mac & Cheese Macaroni and Cheese",
+            "price": 8.5,
+            "category": "food"
+        },
+        {
+            "id": 15,
+            "img": "https://m.media-amazon.com/images/I/71ncSLlzCRL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Squirrel Brand Sweet Brown Butter Cashews",
+            "price": 2.85,
+            "category": "food"
+        },
+        {
+            "id": 16,
+            "img": "https://m.media-amazon.com/images/I/71gVQyoeguL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Snack Pack Chocolate and Vanilla Flavored Pudding",
+            "price": 13.85,
+            "category": "food"
+        },
+        {
+            "id": 17,
+            "img": "https://m.media-amazon.com/images/I/81zyPDmi-SL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Black Urban",
+            "price": 85,
+            "category": "food"
+        },
+        {
+            "id": 18,
+            "img": "https://m.media-amazon.com/images/I/71AlnxaNXKL._AC_UY900_.jpg",
+            "name": "Cheez-It Cheese Crackers, Baked Snack Crackers",
+            "price": 6.48,
+            "category": "food"
+        },
+        {
+            "id": 19,
+            "img": "https://m.media-amazon.com/images/I/711HXUUFGzL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Dole Diced Peaches, Mandarin Oranges",
+            "price": 7.85,
+            "category": "food"
+        },
+        {
+            "id": 20,
+            "img": "https://m.media-amazon.com/images/I/81XiQ4QVOLL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Smartfood Popcorn, White Cheddar, 0.625 Ounce",
+            "price": 21.86,
+            "category": "food"
+        },
+        {
+            "id": 21,
+            "img": "https://m.media-amazon.com/images/I/81ngr3ltNfL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "PLANTERS Deluxe Lightly Salted Whole Cashews",
+            "price": 9.98,
+            "category": "food"
+        },
+        {
+            "id": 22,
+            "img": "https://m.media-amazon.com/images/I/81ytnpPJV+L._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "SpaghettiOs Canned Pasta with Meatballs",
+            "price": 11.44,
+            "category": "food"
+        },
+        {
+            "id": 23,
+            "img": "https://m.media-amazon.com/images/I/81SCalI51YL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Goldfish Crackers Big Smiles Variety Pack with Cheddar",
+            "price": 12.86,
+            "category": "food"
+        },
+        {
+            "id": 24,
+            "img": "https://m.media-amazon.com/images/I/71Qjhi9dZzL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Snack Pack Chocolate Pudding, 4 Count Pudding Cups",
+            "price": 1.89,
+            "category": "food"
+        },
+        {
+            "id": 25,
+            "img": "https://m.media-amazon.com/images/I/51a3plSozyL._AC_SR230,210_QL70_.jpg",
+            "name": "Smartphone XYZ",
+            "price": 699.99,
+            "category": "electronics"
+        },
+        {
+            "id": 26,
+            "img": "https://m.media-amazon.com/images/I/61kXCWKGyGL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Casque Audio Sans Fil ABC",
+            "price": 129.99,
+            "category": "electronics"
+        },
+        {
+            "id": 27,
+            "img": "https://m.media-amazon.com/images/I/71Vr8nDbomL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Ordinateur Portable Ultrabook PQR",
+            "price": 1499.99,
+            "category": "electronics"
+        },
+        {
+            "id": 28,
+            "img": "https://m.media-amazon.com/images/I/81NtLoMTfIL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Montre Connectée GHI",
+            "price": 249.99,
+            "category": "electronics"
+        },
+        {
+            "id": 29,
+            "img": "https://m.media-amazon.com/images/I/71F64KwblhL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Tablette TUV",
+            "price": 1299,
+            "category": "electronics"
+        },
+        {
+            "id": 30,
+            "img": "https://m.media-amazon.com/images/I/71wwTZSRHxL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Enceinte Bluetooth DEF",
+            "price": 79.99,
+            "category": "electronics"
+        },
+        {
+            "id": 31,
+            "img": "https://m.media-amazon.com/images/I/71RUfrL4ZcL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Télévision 4K UHD LMN",
+            "price": 799.99,
+            "category": "electronics"
+        },
+        {
+            "id": 32,
+            "img": "https://m.media-amazon.com/images/I/91qN+9vxqpL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Appareil Photo Reflex STU",
+            "price": 899.99,
+            "category": "electronics"
+        },
+        {
+            "id": 34,
+            "img": "https://m.media-amazon.com/images/I/616VqmwBwCL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Clavier Mécanique QRS",
+            "price": 119.99,
+            "category": "electronics"
+        },
+        {
+            "id": 35,
+            "img": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Souris Gaming OPQ",
+            "price": 49.99,
+            "category": "electronics"
+        },
+        {
+            "id": 36,
+            "img": "https://m.media-amazon.com/images/I/81Gj0NMsfsL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Disque Dur Externe JKL",
+            "price": 69.99,
+            "category": "electronics"
+        },
+        {
+            "id": 37,
+            "img": "https://m.media-amazon.com/images/I/71Q-4K3EmZL._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Projecteur LED UVW",
+            "price": 249.99,
+            "category": "electronics"
+        },
+        {
+            "id": 38,
+            "img": "https://example.com/jacket.jpg",
+            "name": "T-shirt Homme",
+            "price": 250,
+            "category": "Clothes"
+        },
+        {
+            "id": 39,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 40,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 41,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 42,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 43,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 43,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 44,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 45,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 46,
+            "img": "https://example.com/laptop.jpg",
+            "name": "Laptop Pro",
+            "price": 1299,
+            "category": "Clothes"
+        },
+        {
+            "id": 47,
+            "img": "https://m.media-amazon.com/images/I/719FRGXSl8L._AC_UL480_FMwebp_QL65_.jpg",
+            "name": "Robe Été Fleurie",
+            "price": 34.99,
+            "category": "Clothes"
+        },
+        {
+            "id": 48,
+            "img": "https://m.media-amazon.com/images/I/513U83g30sL._AC_SX679_.jpg",
+            "name": "T-shirt Homme",
+            "price": 19.99,
+            "category": "Clothes"
+        }
+    ]
+}
