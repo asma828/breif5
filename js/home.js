@@ -89,3 +89,13 @@ fetch(url)
     .catch(error => {
         console.error("Error fetching data:", error);
     });
+
+    let scroll = document.querySelector("#scroll");
+let backBtn = document.getElementById("backbtn");
+let nextBtn = document.getElementById("nextbtn");
+
+backBtn.addEventListener("click", () => {
+    scroll.style.scrollBehavior = "smooth";
+    scroll.scrollLeft -= 900;
+});
+
