@@ -8,6 +8,41 @@ document.getElementById('closeCart').addEventListener('click', function() {
 
 
 
+const cartItemsContainer = document.getElementById('cartItems');
+const cartTotalElement = document.getElementById('cartTotal');
+const cartTotalQuantityElement = document.getElementById('cartTotalQuantity');
+const emptyCartMessage = document.getElementById('emptyCartMessage');
+
+
+let cart = [];
+
+
+function loadCart() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        updateCart();
+    }
+}
+
+
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+document.getElementById('cartIcon').addEventListener('click', openCart);
+document.getElementById('closeCart').addEventListener('click', closeCart);
+
+function openCart() {
+    document.getElementById('cart').classList.remove('translate-x-full');
+}
+
+function closeCart() {
+    document.getElementById('cart').classList.add('translate-x-full');
+}
+
+
 function addToCart(name, price, imageSrc) {
     const existingCartItem = cart.find(item => item.name === name);
 
@@ -23,15 +58,18 @@ function addToCart(name, price, imageSrc) {
             quantity: 1
         });
     }
+
     updateCart();
     saveCart(); 
 }
+
 
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
     saveCart(); 
 }
+
 
 function updateCart() {
     renderCartItems(); 
@@ -95,6 +133,41 @@ function renderCartItems() {
     });
 }
 
+
+
+function handleSizeChange(index, newSize) {
+    cart[index].size = newSize;
+
+    let priceMultiplier = 1; 
+    if (newSize === 'L') {
+        priceMultiplier = 1.1; 
+    } else if (newSize === 'XL') {
+        priceMultiplier = 1.2; 
+    }
+    cart[index].price = cart[index].basePrice * priceMultiplier;
+
+    updateCart(); 
+    saveCart(); 
+}
+
+function increaseQuantity(index) {
+    cart[index].quantity += 1;
+    updateCart();
+    saveCart();
+}
+
+
+function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+    } else {
+        removeFromCart(index); 
+    }
+    updateCart();
+    saveCart();
+}
+
+
 function updateCartTotal() {
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -132,3 +205,6 @@ document.getElementById('buyButton').addEventListener('click', () => {
     updateCart();
     saveCart();
 });
+
+
+window.onload = loadCart;
