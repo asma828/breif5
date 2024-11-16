@@ -6,8 +6,10 @@ const Clothes = document.querySelector("#Clothes");
 const list = document.querySelector("#list");
 const grid = document.querySelector("#grid");
 const numbers = document.querySelector("#numbers");
+let pageNumber=1;
 
-let display = "gird";
+
+let display = "grid";
 
 // this section is for making the slider 
 const sliderContainer = document.querySelector("#sliderContainer");
@@ -28,6 +30,118 @@ leftArrow.addEventListener("click", () => {
 
 // next function is for paginate the array of products 
 const products = [
+    {
+        id: 1,
+        imgUrl: "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
+        name: "Harry Potter and the Sorcerer's Stone",
+        price: 19,
+        category: "book"
+    },
+    {
+        id: 2,
+        imgUrl: "https://www.bibdsl.co.uk/imagegallery/bookdata/cd427/9780261103252.JPG",
+        name: "The Lord of the Rings",
+        price: 91,
+        category: "book"
+    },
+    {
+        id: 3,
+        imgUrl: "https://m.media-amazon.com/images/I/81t2CVWEsUL._AC_UF1000,1000_QL80_.jpg",
+        name: "The Great Gatsby",
+        price: 15,
+        category: "book"
+    },
+    {
+        id: 4,
+        imgUrl: "https://images-na.ssl-images-amazon.com/images/I/41NZ86oC3cL.jpg",
+        name: "1984 by George Orwell",
+        price: 12,
+        category: "book"
+    },
+    {
+        id: 1,
+        imgUrl: "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
+        name: "Harry Potter and the Sorcerer's ",
+        price: 19,
+        category: "book"
+    },
+    {
+        id: 2,
+        imgUrl: "https://www.bibdsl.co.uk/imagegallery/bookdata/cd427/9780261103252.JPG",
+        name: "The Lord of the Rings",
+        price: 91,
+        category: "book"
+    },
+    {
+        id: 3,
+        imgUrl: "https://m.media-amazon.com/images/I/81t2CVWEsUL._AC_UF1000,1000_QL80_.jpg",
+        name: "The Great Gatsby",
+        price: 15,
+        category: "book"
+    },
+    {
+        id: 4,
+        imgUrl: "https://images-na.ssl-images-amazon.com/images/I/41NZ86oC3cL.jpg",
+        name: "1984 by George Orwell",
+        price: 12,
+        category: "book"
+    },
+    {
+        id: 1,
+        imgUrl: "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
+        name: "Harry Potter and the Sorcerer's Stone",
+        price: 19,
+        category: "book"
+    },
+    {
+        id: 2,
+        imgUrl: "https://www.bibdsl.co.uk/imagegallery/bookdata/cd427/9780261103252.JPG",
+        name: "The Lord of the Rings",
+        price: 91,
+        category: "book"
+    },
+    {
+        id: 3,
+        imgUrl: "https://m.media-amazon.com/images/I/81t2CVWEsUL._AC_UF1000,1000_QL80_.jpg",
+        name: "The Great Gatsby",
+        price: 15,
+        category: "book"
+    },
+    {
+        id: 4,
+        imgUrl: "https://images-na.ssl-images-amazon.com/images/I/41NZ86oC3cL.jpg",
+        name: "1984 by George Orwell",
+        price: 12,
+        category: "book"
+    },
+    {
+        id: 1,
+        imgUrl: "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
+        name: "Harry Potter and the Sorcerer's Stone",
+        price: 19,
+        category: "book"
+    },
+    {
+        id: 2,
+        imgUrl: "https://www.bibdsl.co.uk/imagegallery/bookdata/cd427/9780261103252.JPG",
+        name: "The Lord of the Rings",
+        price: 91,
+        category: "book"
+    },
+    {
+        id: 3,
+        imgUrl: "https://m.media-amazon.com/images/I/81t2CVWEsUL._AC_UF1000,1000_QL80_.jpg",
+        name: "The Great Gatsby",
+        price: 15,
+        category: "book"
+    },
+    {
+        id: 4,
+        imgUrl: "https://images-na.ssl-images-amazon.com/images/I/41NZ86oC3cL.jpg",
+        name: "1984 by George Orwell",
+        price: 12,
+        category: "book"
+    },
     {
         id: 1,
         imgUrl: "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/172881/174498/51DF6ZR8G7L__38888.1615626055.jpg?c=1",
@@ -106,7 +220,9 @@ const food = products.filter(elements => elements.category == "food");
 const clothes = products.filter(elements => elements.category == "clothes");
 
 // next function is for paginate the array of products 
-const paginate = (array, currenPage = 1, sectionSize = 4) => {
+const paginate = (array, currenPage, sectionSize = 4) => {
+    console.log(currenPage);
+    
     const startIndex = (currenPage - 1) * sectionSize;
     const lastIndex = startIndex + sectionSize;
     return array.slice(startIndex, lastIndex);
@@ -114,11 +230,7 @@ const paginate = (array, currenPage = 1, sectionSize = 4) => {
 const totalOfpages = (array, sectionSize = 4) => {
     return Math.ceil(array.length / sectionSize);
 }
-// add numbers in the list of pages
-let lastnumbers = totalOfpages(books)
-for (let index = 0; index < lastnumbers; index++) {
-    numbers.innerHTML += `<button class="text-lg font-bold mx-4">${index + 1}</button>`
-}
+
 
 const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
     const ElectronicsCards = Electronics.querySelector("#cards")
@@ -145,7 +257,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </div>
                         <button>
                             <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${elecrtonics.id}">
                                 <i class="fa-solid fa-cart-shopping text-sm"></i>
                                 <p>add to cart</p>
                             </div>
@@ -170,7 +282,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </div>
                         <button>
                             <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${e.id}">
                                 <i class="fa-solid fa-cart-shopping text-sm"></i>
                                 <p>add to cart</p>
                             </div>
@@ -195,7 +307,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </div>
                         <button>
                             <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${e.id}">
                                 <i class="fa-solid fa-cart-shopping text-sm"></i>
                                 <p>add to cart</p>
                             </div>
@@ -220,7 +332,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         </div>
                         <button>
                             <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm data-id="${elecrtonics.id}"">
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm " data-id="${e.id}"">
                                 <i class="fa-solid fa-cart-shopping text-sm"></i>
                                 <p>add to cart</p>
                             </div>
@@ -257,7 +369,7 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                             </div>
                             <button>
                                 <div
-                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" >
                                     <i class="fa-solid fa-cart-shopping text-sm"></i>
                                     <p>add to cart</p>
                                 </div>
@@ -271,7 +383,7 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                     <div class="w-2/5">
                         <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="flex justify-around flex-col h-20">
+                    <div class="flex justify-around flex-col h-20 w-20">
                         <div>
                             ${e.name}
                         </div>
@@ -295,8 +407,8 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                     <div class="w-2/5">
                         <img src="${e.imgUrl}" alt=""class="h-full w-full">
                     </div>
-                    <div class="flex justify-around flex-col h-20">
-                        <div>
+                    <div class="flex justify-around flex-col h-20 w-56">
+                        <div class="w-full">
                             ${e.name}
                         </div>
                         <div class="w-full flex justify-between">
@@ -343,35 +455,71 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
 list.addEventListener("click", () => {
     display = "list";
     if (display == "grid") {
-        const pagenatedBooks = paginate(books);
-        const pagenatedClothes = paginate(clothes);
-        const pagenatedElecrtonics = paginate(elecrtonics);
-        const pagenatedFood = paginate(food);
+        const pagenatedBooks = paginate(books,pageNumber);
+        const pagenatedClothes = paginate(clothes,pageNumber);
+        const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+        const pagenatedFood = paginate(food,pageNumber);
         displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
     }
     else if (display == "list") {
-        const pagenatedBooks = paginate(books);
-        const pagenatedClothes = paginate(clothes);
-        const pagenatedElecrtonics = paginate(elecrtonics);
-        const pagenatedFood = paginate(food);
+        const pagenatedBooks = paginate(books,pageNumber);
+        const pagenatedClothes = paginate(clothes,pageNumber);
+        const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+        const pagenatedFood = paginate(food,pageNumber);
         displaylist(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
     }
 })
 grid.addEventListener("click", () => {
     display = "grid";
     if (display == "grid") {
-        const pagenatedBooks = paginate(books);
-        const pagenatedClothes = paginate(clothes);
-        const pagenatedElecrtonics = paginate(elecrtonics);
-        const pagenatedFood = paginate(food);
+        const pagenatedBooks = paginate(books,pageNumber);
+        const pagenatedClothes = paginate(clothes,pageNumber);
+        const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+        const pagenatedFood = paginate(food,pageNumber);
 
         displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
     }
     else if (display == "list") {
-        const pagenatedBooks = paginate(books);
-        const pagenatedClothes = paginate(clothes);
-        const pagenatedElecrtonics = paginate(elecrtonics);
-        const pagenatedFood = paginate(food);
+        const pagenatedBooks = paginate(books,pageNumber);
+        const pagenatedClothes = paginate(clothes,pageNumber);
+        const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+        const pagenatedFood = paginate(food,pageNumber);
         displaylist(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
     }
 })
+const defaultDisplay = () => {
+    const pagenatedBooks = paginate(books,pageNumber);
+    const pagenatedClothes = paginate(clothes,pageNumber);
+    const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+    const pagenatedFood = paginate(food,pageNumber);
+    displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+}
+defaultDisplay();
+// add numbers in the list of pages
+let lastnumbers = totalOfpages(books)
+for (let index = 0; index < lastnumbers; index++) {
+    numbers.innerHTML += `<button class="text-lg font-bold mx-4 pageButton" data-id="${index+1}">${index + 1}</button>`
+}
+const pagebuttons =document.querySelectorAll(".pageButton")
+pagebuttons.forEach(element => {
+    element.addEventListener("click",(e)=>{
+        pageNumber= Number(e.target.dataset.id)
+        console.log(pageNumber);
+        console.log(display);
+        if (display === "grid") {
+            console.log("it's clicked");
+            const pagenatedBooks = paginate(books,pageNumber);
+            const pagenatedClothes = paginate(clothes,pageNumber);
+            const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+            const pagenatedFood = paginate(food,pageNumber);
+            displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+        }
+        else if (display === "list") {
+            const pagenatedBooks = paginate(books,pageNumber);
+            const pagenatedClothes = paginate(clothes,pageNumber);
+            const pagenatedElecrtonics = paginate(elecrtonics,pageNumber);
+            const pagenatedFood = paginate(food,pageNumber);
+            displaylist(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
+        }
+    })
+});
