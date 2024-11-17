@@ -70,7 +70,7 @@ fetch(url)
 
         const products = data.products;
 
-        for (let i = 0; i < products.length; i++) {
+        for (let i = 12; i <= 35; i++) {
             const product = products[i];
 
             const cards = document.getElementById('container_product');
@@ -79,26 +79,26 @@ fetch(url)
 
             card.innerHTML = `
             <div>
-        <div class="bg-white min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+        <div class="bg-white min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3  gap-3 rounded-lg p-4 bg-gray-200">
         
-            <div class="flex ">
-                
+            <div class="flex justify-end w-[100%] h-[10%]">
+                <span class=""> <img src="/images/50off.png"></span>
             </div>
-            <div class="w-28 h-60">
-                <img class="object-cover" src="${product.img}" alt="">
+            <div class="w-[100%] min-h-[70%]">
+                <img class="object-cover h-[70%]" src="${product.img}" alt="${product.name}">
             </div>
-            <div class="flex justify-around flex-col h-20">
+            <div class="flex justify-around flex-col h-[30%]">
                 <div class="h-12">
                     <h1 class="font-bold">${product.name.slice(0, 20)}...</h1>
                 </div>
                 <div class="w-60 flex justify-between">
                     <div class="text-orange-400">
-                        <span class="font-bold">£ ${product.price} <sup class="text-black line-through">${product.price * 2}</sup></span>
+                        <span class="font-bold text-base">$${product.price} <sup class="text-black font-normal line-through !text-xs">${product.price * 2}</sup></span>
                     </div>
                     <button>
-                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <p class="font-bold">Add to cart</p>
+                        <div class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                            <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            <p>add to cart</p>
                         </div>
                     </button>
                 </div>
