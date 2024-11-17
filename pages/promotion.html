@@ -36,10 +36,10 @@
                 </div>
             </div>
             <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
-                <a class="hidden md:block hover:text-orange-400" href="#">HOME</a>
-                <a class="hidden md:block hover:text-orange-400" href="#">CONTACT US</a>
-                <a class="hidden md:block hover:text-orange-400" href="#">CATALOGUE</a>
-                <a class="hidden md:block hover:text-orange-400" href="#">PROMOTIONS</a>
+                <a class="hidden md:block hover:text-orange-400" href="../index.html">HOME</a>
+                <a class="hidden md:block hover:text-orange-400" href="/pages/catalogue.html">CATALOGUE</a>
+                <a class="hidden md:block hover:text-orange-400" href="/pages/promotion.html">PROMOTIONS</a>
+                <a class="hidden md:block hover:text-orange-400" href="/pages/contact.html">CONTACT US</a>
                 <div class="block md:hidden">
                     <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
                         <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
@@ -53,157 +53,74 @@
         <div id="menu_burger"
             class="fixed inset-0 bg-slate-700  text-white hidden z-50 flex flex-col items-center justify-center space-y-6">
             <button id="button_to_close" class="absolute top-5 right-5 text-3xl text-white">&#10005;</button>
-            <a href="#" class="text-xl hover:text-orange-500">HOME</a>
-            <a href="#" class="text-xl hover:text-orange-500">CONTACT US</a>
-            <a href="#" class="text-xl hover:text-orange-500">CATALOGUE</a>
-            <a href="#" class="text-xl hover:text-orange-500">PROMOTIONS</a>
+            <a href="../index.html" class="text-xl hover:text-orange-500">HOME</a>
+            <a href="/pages/catalogue.html" class="text-xl hover:text-orange-500">CATALOGUE</a>
+            <a href="/pages/promotion.html" class="text-xl hover:text-orange-500">PROMOTIONS</a>
+            <a href="/pages/contact.html" class="text-xl hover:text-orange-500">CONTACT US</a>
         </div>
     </header>
 
-<!-- CartPanier -->
-<div id="cart" class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
-    <div class="p-4 border-b flex justify-between items-center">
-        <h2 class="text-lg font-semibold">Mon Panier</h2>
-        <button id="closeCart" class="text-2xl font-bold">&times;</button>
+    <!-- CartPanier -->
+    <div id="cart"
+        class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Mon Panier</h2>
+            <button id="closeCart" class="text-2xl font-bold">&times;</button>
+        </div>
+        <div id="cartItems" class="p-4">
+            <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
+        </div>
+        <div class="p-4 border-t flex justify-between">
+            <p>Total produits: <span id="cartTotalQuantity">0</span></p>
+            <p>Total: <span id="cartTotal">$0.00</span></p>
+        </div>
+        <div class="p-4">
+            <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
+        </div>
     </div>
-    <div id="cartItems" class="p-4">
-        <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
-    </div>
-    <div class="p-4 border-t flex justify-between">
-        <p>Total produits: <span id="cartTotalQuantity">0</span></p>
-        <p>Total: <span id="cartTotal">$0.00</span></p>
-    </div>
-    <div class="p-4">
-        <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
-    </div>
-</div>
 
     <!-- Hero section -->
     <main class="">
-            <div data-carousel class="relative overflow-hidden  shadow-lg ">
-            
-                <div data-slides class="flex  ">
-                    
-                    <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]" data-active>
-                        <img src="/img/slider4_07753b16-a7ed-4056-b866-3658a38ee363.webp" alt="Slide 1" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-15 flex flex-col justify-center items-start pl-14 h-[200px] md:h-[490px]">
-        
-                            <h2 class="hidden md:block text-xl font-bold text-white mb-4">
-                                Up to
-                                <span class="text-[#A66D2E] font-normal text-2xl">60% OFF</span>
-                                <span class="font-bold text-xl text-black"> & Free Shipping</span>
-                            </h2>
-                            <p class="hidden md:block text-black font-bold text-4xl">
-        
-        Mixed Vegetable Pack (1.5 kg)<br> Save Up to 70%!
-                            </p>
-                            <p class="hidden md:block text-xl">
-                                <span class="text-black font-semibold">Start Saving Now!</span>
-                            </p>
-                            <button class="text-white flex justify-start content-center mt-3 hover:text-black">
-                                <a href="#" class="bg-[#A66D2E] rounded-[20px] w-32 h-10 flex items-center justify-center">
-                                    BUY NOW
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-        
-        
-                    
-                    <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]">
-                        <img src="/img/slider18.webp" alt="Slide 2"
-                            class="w-full h-full object-cover ">
-                        <div class=" absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-center items-start pl-14">
-                            <h2 class=" hidden md:block text-3xl font-bold text-white mb-4">
-                                
-                                Up to 30% OFF & Free Shipping</h2>
-                            <p class=" hidden md:block text-black text-xl">  Don't miss this amazing offer on our Makarona Pasta Pack (1.5 kg)!<br>(20Dh off) </p>
-                            <button class="text-white flex justify-start content-center mt-3 hover:text-black "><a href="#"
-                                    class="bg-[#A66D2E] rounded-[20px]  w-32 h-10 content-center ">BUY NOW</a></button>
-                        </div>
-                    </div>
-        
-                    
-                    <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]">
-                        <img src="/img/slider15_1095bb4b-43d0-402c-a74a-17c949f1c5c3.webp" alt="Slide 3" class="w-full h-full object-cover ">
-                        <div
-                            class=" absolute inset-0 bg-black bg-opacity-15 flex flex-col justify-center items-start pl-14  h-[490px]">
-                            <h2 class="hidden md:block text-xl font-bold text-white mb-4">Up to <span
-                                    class="text-[#A66D2E] font-medium text-2xl ">60% OFF</span><span class="font-bold text-2xl">
-                                    & Free Shipping</span> </h2>
-                            <p class=" hidden md:block text-white font-bold text-4xl">wireless Headphones <br> reinvented.</p>
-                            <p class="hidden md:block text-xl text-white">The power and performance of both a <span
-                                    class="text-[#A66D2E] font-semibold">40mm</span> and <br> <span
-                                    class="text-[#A66D2E] font-semibold">30mm</span> neodymium driver in each ear cup!</p>
-                            <button class=" text-white flex justify-start content-center mt-3 hover:text-black "><a href="#"
-                                    class="bg-[#A66D2E] rounded-[20px]  w-32 h-10 content-center ">BUY NOW</a></button>
-                        </div>
-                    </div>
+        <div data-carousel class="relative overflow-hidden  shadow-lg ">
+
+            <div data-slides class="flex  ">
+
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] " data-active>
+                    <img src="/images/hero_promotion.png" alt="Slide 1"
+                        class="w-full h-full object-cover">
                 </div>
-        
-                
-                <button data-carousel-button="prev"
-                    class=" w-20 h-60 absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md  md:w-14 md:h-12 opacity-0 ">
-                    ‹
-                </button>
-                <button data-carousel-button="next"
-                    class=" w-20 h-60 absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md:w-14 md:h-12 opacity-0 ">
-                    ›
-                </button>
+
+
+
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] ">
+                    <img src="/images/hro_promotion2.png" alt="Slide 2" class="w-full h-full object-cover ">
+                    
+                </div>
+
+
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px]">
+                    <img src="/images/hero_promotion3.png" alt="Slide 3"
+                        class="w-full h-full object-cover ">
+                </div>
             </div>
+
+
+            <button data-carousel-button="prev"
+                class=" w-20 h-60 absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md  md:w-14 md:h-12 opacity-0 ">
+                ‹
+            </button>
+            <button data-carousel-button="next"
+                class=" w-20 h-60 absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md:w-14 md:h-12 opacity-0 ">
+                ›
+            </button>
+        </div>
     </main>
     <!-- Products section -->
-    <div class="container_product grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  place-items-center mt-5">
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[100%] md:w-[50%] sm:w-[90%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] sm:w-[90%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] sm:w-[90%]flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%]  sm:w-[90%] flex flex-col justify-around items-center rounded-lg">
-        </div>
 
-        <div
-            class="row-span-2 bg-black h-auto min-h-[100%] w-[95%] md:w-[70%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
-        <div
-            class="bg-black min-h-[16rem] h-auto w-[90%] md:w-[50%] flex flex-col justify-around items-center rounded-lg">
-        </div>
+    <div id="container_product" class="container_product flex flex-row flex-wrap justify-center gap-4">
+        
     </div>
+    
 
 
     <!-- Footer section -->

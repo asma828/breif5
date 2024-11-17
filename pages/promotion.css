@@ -1,6 +1,10 @@
 #menu_burger {
     display: none; 
 }
+body{
+    margin: 0;
+    padding: 0;
+}
 
 #menu_burger.open {
     display: flex; 
@@ -18,4 +22,7 @@
 }
 body{
     overflow-x: hidden;
+}
+#proudact::-webkit-scrollbar{
+    display: none;
 }
