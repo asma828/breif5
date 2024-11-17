@@ -42,7 +42,7 @@ const productcs = async () => {
 let books, electronics, food, clothes;
 (async () => {
     const productsc = await productcs();
-    const {products} = productsc
+    const { products } = productsc
     // Filter categories after the data is fetched
     books = products.filter(element => element.category === "book");
     electronics = products.filter(element => element.category === "electronics");
@@ -52,9 +52,6 @@ let books, electronics, food, clothes;
 
 // next function is for paginate the array of products 
 const paginate = (array, currenPage, sectionSize = 4) => {
-    console.log(currenPage);
-    console.log(array);
-
     const startIndex = (currenPage - 1) * sectionSize;
     const lastIndex = startIndex + sectionSize;
     return array.slice(startIndex, lastIndex);
@@ -74,118 +71,119 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
     foodCards.innerHTML = "";
     clothesCards.innerHTML = "";
     electronicArray.forEach(e => {
-        ElectronicsCards.innerHTML += `<div
-        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-        <div>
-        <img src="${e.img}" alt="">
-        </div>
-        <div class="flex justify-around flex-col h-20">
-        <div>
-        ${e.name}
-        </div>
-        <div class="w-full flex justify-between">
-        <div class="text-orange-400">
-        $${e.price}
-                        </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${e.id}">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
-                            </div>
-                        </button>
-                    </div>
+        ElectronicsCards.innerHTML += `<div>
+        <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+            <div class="w-28 h-60">
+                <img class="object-cover" src="${e.img}" alt="">
+            </div>
+            <div class="flex justify-around flex-col h-20">
+                <div class="h-12">
+                    <h1 class="font-bold">${e.name.slice(0, 20)}...</h1>
                 </div>
-            </div>`;
+                <div class="w-60 flex justify-between">
+                    <div class="text-orange-400">
+                        <span class="font-bold"> ${e.price}</span>
+                        <span class="font-bold">Dh</span>
+                    </div>
+                    <button data-id= "${e.id} id="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`;
     });
     foodAraay.forEach(e => {
-        foodCards.innerHTML += `<div
-        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-        <div>
-        <img src="${e.img}" alt="">
-        </div>
-        <div class="flex justify-around flex-col h-20">
-        <div>
-        ${e.name}
-        </div>
-        <div class="w-full flex justify-between">
-        <div class="text-orange-400">
-        $${e.price}
-                        </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${e.id}">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
-                            </div>
-                        </button>
-                    </div>
+        foodCards.innerHTML += `<div>
+        <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+            <div class="w-28 h-60">
+                <img class="object-cover" src="${e.img}" alt="">
+            </div>
+            <div class="flex justify-around flex-col h-20">
+                <div class="h-12">
+                    <h1 class="font-bold">${e.name.slice(0, 20)}...</h1>
                 </div>
-            </div>`;
+                <div class="w-60 flex justify-between">
+                    <div class="text-orange-400">
+                        <span class="font-bold"> ${e.price}</span>
+                        <span class="font-bold">Dh</span>
+                    </div>
+                    <button data-id= "${e.id} id="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`;
     });
     bookArray.forEach(e => {
-        booksCards.innerHTML += `<div
-        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-        <div>
-        <img src="${e.img}" alt="">
-        </div>
-        <div class="flex justify-around flex-col h-20">
-        <div>
-        ${e.name}
-        </div>
-        <div class="w-full flex justify-between">
-        <div class="text-orange-400">
-        $${e.price}
-                        </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" data-id="${e.id}">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
-                            </div>
-                        </button>
-                    </div>
+        booksCards.innerHTML += `<div>
+        <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+            <div class="w-28 h-60">
+                <img class="object-cover" src="${e.img}" alt="">
+            </div>
+            <div class="flex justify-around flex-col h-20">
+                <div class="h-12">
+                    <h1 class="font-bold">${e.name.slice(0, 20)}...</h1>
                 </div>
-            </div>`;
+                <div class="w-60 flex justify-between">
+                    <div class="text-orange-400">
+                        <span class="font-bold"> ${e.price}</span>
+                        <span class="font-bold">Dh</span>
+                    </div>
+                    <button data-id= "${e.id} id="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`;
     });
     clothesArray.forEach(e => {
-        clothesCards.innerHTML += `<div
-        class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
-        <div>
-        <img src="${e.img}" alt="">
-        </div>
-        <div class="flex justify-around flex-col h-20">
-        <div>
-        ${e.name}
-        </div>
-        <div class="w-full flex justify-between">
-        <div class="text-orange-400">
-        $${e.price}
-                        </div>
-                        <button>
-                            <div
-                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm " data-id="${e.id}"">
-                                <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                <p>add to cart</p>
-                            </div>
-                        </button>
-                    </div>
+        clothesCards.innerHTML += `<div>
+        <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+            <div class="w-28 h-60">
+                <img class="object-cover" src="${e.img}" alt="">
+            </div>
+            <div class="flex justify-around flex-col h-20">
+                <div class="h-12">
+                    <h1 class="font-bold">${e.name.slice(0, 20)}...</h1>
                 </div>
-            </div>`;
+                <div class="w-60 flex justify-between">
+                    <div class="text-orange-400">
+                        <span class="font-bold"> ${e.price}</span>
+                        <span class="font-bold">Dh</span>
+                    </div>
+                    <button data-id= "${e.id} id="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`;
     });
 }
 const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
     const ElectronicsCards = Electronics.querySelector("#cards")
     const booksCards = Bookes.querySelector("#cards")
-    console.log(booksCards);
     const foodCards = Food.querySelector("#cards")
     const clothesCards = Clothes.querySelector("#cards")
     ElectronicsCards.innerHTML = "";
     booksCards.innerHTML = "";
     foodCards.innerHTML = "";
     clothesCards.innerHTML = "";
-    console.log(electronicArray);
-
     electronicArray.forEach(e => {
         ElectronicsCards.innerHTML += `<div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
                     <div class="w-2/5">
@@ -326,26 +324,22 @@ const defaultDisplay = () => {
     const pagenatedFood = paginate(food, pageNumber);
     displaygrid(pagenatedElecrtonics, pagenatedBooks, pagenatedFood, pagenatedClothes);
 }
-setTimeout(defaultDisplay,300);
+setTimeout(defaultDisplay, 300);
 // add numbers in the list of pages
-let lastnumbers 
-setTimeout(()=>{
+let lastnumbers
+setTimeout(() => {
     lastnumbers = totalOfpages(books)
-for (let index = 0; index < lastnumbers; index++) {
-    numbers.innerHTML += `<button class="text-lg font-bold mx-4 pageButton" data-id="${index + 1}">${index + 1}</button>`
-}
-},300)
+    for (let index = 0; index < lastnumbers; index++) {
+        numbers.innerHTML += `<button class="text-lg font-bold mx-4 pageButton" data-id="${index + 1}">${index + 1}</button>`
+    }
+}, 300)
 let pagebuttons
-setTimeout(()=>{
+setTimeout(() => {
     pagebuttons = document.querySelectorAll(".pageButton")
-    console.log(pagebuttons);
     pagebuttons.forEach(element => {
         element.addEventListener("click", (e) => {
             pageNumber = Number(e.target.dataset.id)
-            console.log(pageNumber);
-            console.log(display);
             if (display === "grid") {
-                console.log("it's clicked");
                 const pagenatedBooks = paginate(books, pageNumber);
                 const pagenatedClothes = paginate(clothes, pageNumber);
                 const pagenatedElecrtonics = paginate(electronics, pageNumber);
@@ -361,7 +355,7 @@ setTimeout(()=>{
             }
         })
     });
-},300)
+}, 300)
 
 
 

@@ -49,6 +49,25 @@
             </div>
         </nav>
         <!-- burger menu -->
+        <!-- CartPanier -->
+        <div id="cart"
+            class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Mon Panier</h2>
+                <button id="closeCart" class="text-2xl font-bold">&times;</button>
+            </div>
+            <div id="cartItems" class="p-4">
+                <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
+            </div>
+            <div class="p-4 border-t flex justify-between">
+                <p>Total produits: <span id="cartTotalQuantity">0</span></p>
+                <p>Total: <span id="cartTotal">$0.00</span></p>
+            </div>
+            <div class="p-4">
+                <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
+            </div>
+        </div>
+        <!-- CartPanier end  -->
         <div id="menu_burger"
             class="fixed inset-0 bg-slate-700  text-white hidden z-50 flex flex-col items-center justify-center space-y-6">
             <button id="button_to_close" class="absolute top-5 right-5 text-3xl text-white">&#10005;</button>
@@ -260,7 +279,7 @@
         </div>
     </footer>
     <script src="../js/catalogue.js"></script>
-
+    <script src="../js/panier.js"></script>
 </body>
 
 </html>
