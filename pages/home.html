@@ -1,42 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="/pages/Home.css">
-    
+    <link rel="stylesheet" href="../pages/promotion.css">
+    <script src="../tailwind.js"></script>
+
+
 </head>
-<body>
+
+<body class="bg-gray-200">
     <header>
         <nav>
             <div id="nav" class="flex w-screen h-20 bg-merrakchi justify-around items-center">
-                <div>
-                    <img src="/images/logo.png" alt="logo">
+                <button id="burger_button" class="text-3xl burgerbutton white md:hidden">&#9776;</button>
+                <div class="h-[70px]">
+                    <img src="/breif5/images/logo.png" alt="logo" class="w-full h-full object-contain">
                 </div>
-                <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
-                    <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
-                    <i
-                        class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                <div class="hidden md:block">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
                 </div>
-                <div class="w-40  flex justify-around">
+                <div class="w-40 flex justify-around">
                     <i class="fa-solid fa-heart text-2xl text-white"></i>
                     <i class="fa-solid fa-user text-2xl text-white"></i>
-                    <button>
+                    <button id="cartIcon">
                         <i class="fa-solid fa-cart-shopping text-2xl text-white"></i>
                     </button>
                 </div>
             </div>
-                <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
-                    <a class="hover:text-orange-400 tr" href="#">HOME</a>
-                    <a class="hover:text-orange-400" href="#">PROMOTIONS</a>
-                    <a class="hover:text-orange-400" href="#">CATALOGUE</a>
-                    <a class="hover:text-orange-400" href="#">CONTACT US</a>
+            <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
+                <a class="hidden md:block hover:text-orange-400" href="#">HOME</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CONTACT US</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CATALOGUE</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">PROMOTIONS</a>
+                <div class="block md:hidden">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
                 </div>
+            </div>
         </nav>
+        <!-- burger menu -->
+        <div id="menu_burger"
+            class="fixed inset-0 bg-slate-700  text-white hidden z-50 flex flex-col items-center justify-center space-y-6">
+            <button id="button_to_close" class="absolute top-5 right-5 text-3xl text-white">&#10005;</button>
+            <a href="#" class="text-xl hover:text-orange-500">HOME</a>
+            <a href="#" class="text-xl hover:text-orange-500">CONTACT US</a>
+            <a href="#" class="text-xl hover:text-orange-500">CATALOGUE</a>
+            <a href="#" class="text-xl hover:text-orange-500">PROMOTIONS</a>
+        </div>
     </header>
-    <script src="tailwind.js"></script>
-    
+
+    <section>
+        <div id="cart"
+            class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Mon Panier</h2>
+                <button id="closeCart" class="text-2xl font-bold">&times;</button>
+            </div>
+            <div id="cartItems" class="p-4">
+                <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
+            </div>
+            <div class="p-4 border-t flex justify-between">
+                <p>Total produits: <span id="cartTotalQuantity">0</span></p>
+                <p>Total: <span id="cartTotal">$0.00</span></p>
+            </div>
+            <div class="p-4">
+                <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <section>
+        <div data-carousel class="relative overflow-hidden  shadow-lg ">
+
+            <div data-slides class="flex  ">
+
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]" data-active>
+                    <img src="../images/hero.png" alt="Slide 1"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-15 flex flex-col justify-center items-start pl-14 h-[200px] md:h-[490px]">
+                        <div class="ml-8">
+                            <h2 class="hidden md:block text-xl font-bold text-white mb-4">
+                                Up to
+                                <span class="text-[#A66D2E] font-normal text-2xl">60% OFF</span>
+                                <span class="font-bold text-xl text-white"> & Free Shipping</span>
+                            </h2>
+                            <p class="hidden md:block text-white font-bold text-4xl">
+
+                                Black Friday Starts Now: <br> Save Up to 70%!
+                            </p>
+                            <p class="hidden md:block text-xl">
+                                <span class="text-white font-semibold">Start Saving Now!</span>
+                            </p>
+                            <button class="text-white flex justify-start content-center mt-3 hover:text-black">
+                                <a href="#"
+                                    class="bg-[#A66D2E] rounded-[20px] w-32 h-10 flex items-center justify-center">
+                                    BUY NOW
+                                </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]">
+                    <img src="../images/books.png" alt="Slide 2" class="w-full h-full object-cover ">
+                    <div
+                        class=" absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-center items-start pl-14">
+                        <div class="ml-8 w-[500px]">
+                            <h2 class=" hidden md:block text-3xl font-bold text-black mb-4">
+                                Up to 30% OFF & Free Shipping</h2>
+                            <p class=" hidden md:block text-white font-bold text-2xl"> Free PSD Mockup Templates (30 Presentation Mock-ups) Graphic Design Junction </p>
+                            <p class="hidden md:block text-xl">
+                                <span class="text-white font-semibold">Start Saving Now!</span>
+                            </p>
+                            <button class="text-white flex justify-start content-center mt-3 hover:text-black "><a href="#"
+                                    class="bg-[#A66D2E] rounded-[20px]  w-32 h-10 content-center ">BUY NOW</a></button>
+                        </div>
+                    </div>
+                        </div>
+                <div class="relative w-full flex-shrink-0 h-[200px] md:h-[490px] bg-[#385E72]">
+                    <img src="../images/clothes.png" alt="Slide 3"
+                        class="w-full h-full object-cover ">
+                    <div
+                        class=" absolute inset-0 bg-black bg-opacity-15 flex flex-col justify-center items-start pl-14  h-[490px]">
+                        <div class="ml-8 hidden md:block">
+                            <h2 class="hidden md:block text-xl font-bold text-white mb-4">Up to <span
+                                class="text-[#A66D2E] font-medium text-2xl ">40% OFF</span><span
+                                class="font-bold text-2xl">
+                                & Free Shipping</span> </h2>
+                        <p class=" hidden md:block text-white font-bold text-4xl">SHENHE Men's
+                        </p>
+                        <p class="hidden md:block text-xl text-white">100% Polyester
+                        <button class=" text-white flex justify-start content-center mt-3 hover:text-black "><a href="#"
+                                class="bg-[#A66D2E] rounded-[20px]  w-32 h-10 content-center ">BUY NOW</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button data-carousel-button="prev"
+                class=" w-20 h-60 absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md  md:w-14 md:h-12 ">
+                ‹
+            </button>
+            <button data-carousel-button="next"
+                class=" w-20 h-60 absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 md:bg-opacity-70 text-white rounded-full p-3 md:hover:bg-opacity-100 md:w-14 md:h-12">
+                ›
+            </button>
+        </div>
+    </section>
+
+
+    <div class="h-20 ml-20 flex justify-start items-center">
+        <h1 class="font-bold text-2xl">
+            CATALOGUE
+        </h1>
+    </div>
+    <section class=" flex justify-center flex-wrap ">
+        <div class="w-[1300px]">
+            <div id="ctego" class="w-[100%] h-auto flex flex-wrap justify-around items-center rounded-2xl ">
+                <div class="w-36 mb-4 sm:w-28 md:w-32 lg:w-36 flex flex-col justify-center">
+                    <a href="#"><img class="w-full" src="../images/cate_el.png" alt=""></a>
+                </div>
+                <div class="w-36 mb-4 sm:w-28 md:w-32 lg:w-36 flex flex-col justify-center">
+                    <a href="#"><img class="w-full" src="../images/cate_fa.png" alt=""></a>
+                </div>
+                <div class="w-36 mb-4 sm:w-28 md:w-32 lg:w-36 flex flex-col justify-center">
+                    <a href="#"><img class="w-full" src="../images/cate-fash.png" alt=""></a>
+                </div>
+                <div class="w-36 mb-4 sm:w-28 md:w-32 lg:w-36 flex flex-col justify-center">
+                    <a href="#"><img class="w-full" src="../images/pastille-pem-2.webp" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section id="proudact" class="w-screen flex justify-center">
+
+        <div class="w-10 h-96 flex items-center ml-4">
+            <button id="backbtn" class="w-10 bg-black bg-opacity-20 rounded-full h-10">
+                <i class="fa-solid fa-left-long"></i>
+            </button>
+        </div>
+
+        <div id="cards" class="overflow-x-auto flex space-x-4 px-4 w-[1300px] mr-6">
+
+        </div>
+
+
+        <div class="w-10 h-96 flex items-center mr-6">
+            <button id="nextbtn" class="w-10 bg-black bg-opacity-20 rounded-full h-10">
+                <i class="fa-solid fa-right-long"></i>
+            </button>
+        </div>
+    </section>
+
+    <div class="w-full bg-white shadow-md p-6 rounded-lg">
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="p-4 rounded-lg shadow-sm relative">
+                <img src="../images/banner1.jpg" alt="Promo 1" class="rounded-lg w-full h-full object-cover">
+
+            </div>
+
+            <div class="p-4 rounded-lg shadow-sm relative">
+                <img src="../images/banner2.jpg" alt="Promo 2" class="rounded-lg w-full h-full object-cover">
+
+                </p>
+
+            </div>
+
+
+            <div class=" p-4 rounded-lg shadow-sm relative">
+                <img src="../images/banner3.jpg" alt="Promo 3" class="rounded-lg w-full h-full object-cover">
+
+            </div>
+
+
+            <div class="p-4 rounded-lg shadow-sm relative">
+                <img src="../images/banner4.jpg" alt="Promo 4" class="rounded-lg w-full h-full object-cover">
+                <p class="absolute bottom-2 left-2 text-gray-800 font-bold">Galaxy Z Flip4</p>
+            </div>
+    </div>
+    </section>
+
+
+    <section class="text-center mt-20 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Our Advantages</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+
+
+            <div class="flex flex-col items-center">
+                <span class="text-blue-500 text-3xl mb-2"><img src="../images/retour 1.png" alt=""></span>
+                <p class="text-gray-700 font-medium">Free shipping within 24-48 hours</p>
+            </div>
+
+
+            <div class="flex flex-col items-center">
+                <span class="text-blue-500 text-3xl mb-2"><img src="../images/paiement_securise 1.png" alt=""></span>
+                <p class="text-gray-700 font-medium">Secured payment methods</p>
+            </div>
+
+
+            <div class="flex flex-col items-center">
+                <span class="text-blue-500 text-3xl mb-2"><img class="h-[60px]" src="../images/retrait 1.svg"
+                        alt=""></span>
+                <p class="text-gray-700 font-medium">7-day money-back guarantee</p>
+            </div>
+
+
+            <div class="flex flex-col items-center">
+                <span class="text-blue-500 text-3xl mb-2"><img src="../images/service_client 1.svg" alt=""></span>
+                <p class="text-gray-700 font-medium">24/7 customer service</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#2e5163] text-gray-200 py-12 w-screen">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+
+            <div class="flex flex-col items-start">
+                <img src="../images/logo.png" alt="E-commerce Logo" class="w-50 h-20 mb-2">
+            </div>
+            <div class="flex flex-col items-start">
+
+                <h3 class="font-semibold text-lg">Explore</h3>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Our Team</a></li>
+                    <li><a href="#" class="hover:underline">Products</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hidden md:block border-r border-gray-400 h-20"></div>
+
+            <div class="flex flex-col items-start">
+                <h3 class="font-semibold text-lg">Social Media</h3>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="flex items-center"><i class="bi bi-facebook mr-2"></i>Auchan</a></li>
+                    <li><a href="#" class="flex items-center"><i class="bi bi-linkedin mr-2"></i>Auchan</a></li>
+                    <li><a href="#" class="flex items-center"><i class="bi bi-instagram mr-2"></i>Auchan</a></li>
+                    <li><a href="#" class="flex items-center"><i class="bi bi-twitter mr-2"></i>Auchan</a></li>
+                </ul>
+            </div>
+            <div class="hidden md:block border-r border-gray-400 h-20"></div>
+
+            <div class="flex flex-col items-start">
+                <h3 class="font-semibold text-lg">Contact Us</h3>
+                <ul class="mt-2 space-y-1">
+                    <li class="flex items-center"><i class="bi bi-geo-alt mr-2"></i>Youcode, Rte Jorf El Youdi, Safi
+                    </li>
+                    <li class="flex items-center"><i class="bi bi-envelope mr-2"></i>info@email.com</li>
+                    <li class="flex items-center"><i class="bi bi-telephone mr-2"></i>0612345678</li>
+                    <li class="flex items-center"><i class="bi bi-printer mr-2"></i>0512345678</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/home.js"></script>
 </body>
+
 </html>
