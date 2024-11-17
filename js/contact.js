@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const refillBtn = document.getElementById("refillBtn");
     const submitBtn = document.getElementById("submitBtn");
   
-    // Refills the form with data from the API
+    // refill button click event
     refillBtn.addEventListener("click", () => {
       fetch("https://randomuser.me/api/")
         .then((response) => response.json())
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("firstName").value = user.name.first;
           document.getElementById("lastName").value = user.name.last;
           document.getElementById("email").value = user.email;
-          document.getElementById("phone").value = user.phone || "+212-600000000"; // Fallback if phone is not available
+          document.getElementById("phone").value = user.phone || "+212-600000000";
           document.getElementById("message").value =
             "Hello! This is a sample message fetched with the API.";
           alert("Form has been refilled with random user data.");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const message = document.getElementById("message").value.trim();
-  
+  // conditions for validation and alert messages
       if (!nameRegex.test(firstName)) {
         alert("Please enter a valid first name.");
         return false;
