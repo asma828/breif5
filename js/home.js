@@ -1,3 +1,25 @@
+const burger_button = document.getElementById("burger_button");
+const menu_burger = document.getElementById("menu_burger");
+const close_button = document.getElementById("button_to_close");
+
+burger_button.addEventListener("click", () => {
+    menu_burger.classList.add("open");
+});
+
+
+close_button.addEventListener("click", () => {
+    menu_burger.classList.remove("open");
+});
+
+menu_burger.addEventListener("click", (event) => {
+    if (event.target === menu_burger) {
+        menu_burger.classList.remove("open");
+    }
+});
+
+
+
+
 document.getElementById('cartIcon').addEventListener('click', function() {
     document.getElementById('cart').classList.remove('translate-x-full');
 });
@@ -5,6 +27,7 @@ document.getElementById('cartIcon').addEventListener('click', function() {
 document.getElementById('closeCart').addEventListener('click', function() {
     document.getElementById('cart').classList.add('translate-x-full');
 });
+
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const intervalTime = 5000; 
 let autoSlideInterval;
@@ -32,13 +55,13 @@ fetch(url)
             
             card.innerHTML = `
             <div>
-        <div class="bg-white min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
+        <div class="bg-white min-w-[230px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
             <div class="w-28 h-60">
                 <img class="object-cover" src="${product.img}" alt="">
             </div>
             <div class="flex justify-around flex-col h-20">
                 <div class="h-12">
-                    <h1 class="font-bold">${product.name.slice(0, 20)}...</h1>
+                    <h1 class="font-bold">${product.name.slice(0, 30)}...</h1>
                 </div>
                 <div class="w-60 flex justify-between">
                     <div class="text-orange-400">
@@ -91,11 +114,18 @@ buttons.forEach(button => {
     });
 });
 
-let scroll = document.querySelector("#scroll");
+let scroll = document.querySelector("#cards");
 let backBtn = document.getElementById("backbtn");
 let nextBtn = document.getElementById("nextbtn");
 
 
+scroll.addEventListener("wheel", (event) => {
+    scroll.scrollLeft += event.deltaX;
+});
+nextBtn.addEventListener("click", () => {
+    scroll.style.scrollBehavior = "smooth";
+    scroll.scrollLeft += 900; 
+});
 
 
 backBtn.addEventListener("click", () => {

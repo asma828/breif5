@@ -20,5 +20,5 @@ body{
     overflow-x: hidden;
 }
 #proudact::-webkit-scrollbar{
-    visibility: hidden;
+    display: none;
 }
