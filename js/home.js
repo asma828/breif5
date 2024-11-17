@@ -33,22 +33,6 @@ const buttons = document.querySelectorAll("[data-carousel-button]");
 const intervalTime = 5000; 
 let autoSlideInterval;
 
-const url = "https://gist.githubusercontent.com/EssadeqBillouche/72ca6ff79f3f364c962fb11de46982ee/raw/product.json";
-
-fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-    })
-    .catch(error => {
-        console.error("Error fetching data:", error);
-    });
-        console.log(data)
-
         const products = data.products;
         
         for (let i = 0; i < products.length; i++) {
@@ -86,10 +70,6 @@ fetch(url)
             `;
             cards.appendChild(card);
         }
-    })
-    .catch(error => {
-        console.error("Error fetching data:", error);
-    });
 
 function moveToNextSlide(offset) {
     const slides = document.querySelector("[data-slides]");

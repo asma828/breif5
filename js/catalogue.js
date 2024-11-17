@@ -39,9 +39,9 @@ const productcs = async () => {
 };
 
 // this place is for filtring the carigorys each one in it array 
-let books, electronics, food, clothes;
+let books, electronics, food, clothes, productsc;
 (async () => {
-    const productsc = await productcs();
+    productsc = await productcs();
     const { products } = productsc
     // Filter categories after the data is fetched
     books = products.filter(element => element.category === "book");
@@ -74,7 +74,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
         ElectronicsCards.innerHTML += `<div>
         <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
             <div class="w-28 h-60">
-                <img class="object-cover" src="${e.img}" alt="">
+                <img class="object-scale-down h-full w-full" src="${e.img}" alt="">
             </div>
             <div class="flex justify-around flex-col h-20">
                 <div class="h-12">
@@ -85,7 +85,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         <span class="font-bold"> ${e.price}</span>
                         <span class="font-bold">Dh</span>
                     </div>
-                    <button data-id= "${e.id} id="ATCB">
+                    <button data-id="${e.id}" class="ATCB">
                         <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p class="font-bold">Add to cart</p>
@@ -100,7 +100,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
         foodCards.innerHTML += `<div>
         <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
             <div class="w-28 h-60">
-                <img class="object-cover" src="${e.img}" alt="">
+                <img class="object-scale-down h-full w-full" src="${e.img}" alt="">
             </div>
             <div class="flex justify-around flex-col h-20">
                 <div class="h-12">
@@ -111,7 +111,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         <span class="font-bold"> ${e.price}</span>
                         <span class="font-bold">Dh</span>
                     </div>
-                    <button data-id= "${e.id} id="ATCB">
+                    <button data-id="${e.id}" class="ATCB">
                         <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p class="font-bold">Add to cart</p>
@@ -126,7 +126,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
         booksCards.innerHTML += `<div>
         <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
             <div class="w-28 h-60">
-                <img class="object-cover" src="${e.img}" alt="">
+                <img class="object-scale-down h-full w-full" src="${e.img}" alt="">
             </div>
             <div class="flex justify-around flex-col h-20">
                 <div class="h-12">
@@ -137,7 +137,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         <span class="font-bold"> ${e.price}</span>
                         <span class="font-bold">Dh</span>
                     </div>
-                    <button data-id= "${e.id} id="ATCB">
+                    <button data-id="${e.id}" class="ATCB">
                         <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p class="font-bold">Add to cart</p>
@@ -152,7 +152,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
         clothesCards.innerHTML += `<div>
         <div class=" min-w-[240px] w-[265px] flex flex-col justify-between items-center h-[320px] m-3 rounded-lg p-4 bg-gray-200">
             <div class="w-28 h-60">
-                <img class="object-cover" src="${e.img}" alt="">
+                <img class="object-scale-down h-full w-full" src="${e.img}" alt="">
             </div>
             <div class="flex justify-around flex-col h-20">
                 <div class="h-12">
@@ -163,7 +163,7 @@ const displaygrid = (electronicArray, bookArray, foodAraay, clothesArray) => {
                         <span class="font-bold"> ${e.price}</span>
                         <span class="font-bold">Dh</span>
                     </div>
-                    <button data-id= "${e.id} id="ATCB">
+                    <button data-id="${e.id}" class="ATCB">
                         <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p class="font-bold">Add to cart</p>
@@ -197,13 +197,12 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                             <div class="text-orange-400">
                                 $${e.price}
                             </div>
-                            <button>
-                                <div
-                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm" >
-                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                    <p>add to cart</p>
-                                </div>
-                            </button>
+                            <button data-id="${e.id}" class="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
                         </div>
                     </div>
                 </div>`
@@ -221,13 +220,12 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                             <div class="text-orange-400">
                                 $${e.price}
                             </div>
-                            <button>
-                                <div
-                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
-                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                    <p>add to cart</p>
-                                </div>
-                            </button>
+                            <button data-id="${e.id}" class="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
                         </div>
                     </div>
                 </div>`
@@ -245,13 +243,12 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                             <div class="text-orange-400">
                                 $${e.price}
                             </div>
-                            <button>
-                                <div
-                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
-                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                    <p>add to cart</p>
-                                </div>
-                            </button>
+                            <button data-id="${e.id}" class="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>
                         </div>
                     </div>
                 </div>`
@@ -269,13 +266,12 @@ const displaylist = (electronicArray, bookArray, foodAraay, clothesArray) => {
                             <div class="text-orange-400">
                                 $${e.price}
                             </div>
-                            <button>
-                                <div
-                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
-                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
-                                    <p>add to cart</p>
-                                </div>
-                            </button>
+                            <button data-id="${e.id}" class="ATCB">
+                        <div class="w-32 h-8 bg-white rounded-lg text-orange-400 flex justify-around items-center text-sm border-solid border-orange-400 hover:text-white hover:border-orange-400 border-4 hover:border-none hover:bg-orange-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p class="font-bold">Add to cart</p>
+                        </div>
+                    </button>   
                         </div>
                     </div>
                 </div>`
@@ -383,3 +379,19 @@ menu_burger.addEventListener("click", (event) => {
         menu_burger.classList.remove("open");
     }
 });
+// select the add to card button
+// ATCB means add to card button
+
+setTimeout(() => {
+    const ATCB = document.querySelectorAll(".ATCB");
+    ATCB.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            const cardID = Number(e.currentTarget.dataset.id);
+            console.log(cardID);
+            
+            const { products } = productsc
+            const product = products.find((product) => product.id === cardID);
+            addToCart(product.name,product.price,product.img)
+        })
+    })
+}, 600);
