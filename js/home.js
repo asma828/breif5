@@ -1,3 +1,4 @@
+
 const burger_button = document.getElementById("burger_button");
 const menu_burger = document.getElementById("menu_burger");
 const close_button = document.getElementById("button_to_close");
@@ -42,6 +43,10 @@ fetch(url)
         return response.json();
     })
     .then(data => {
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
         console.log(data)
 
         const products = data.products;
@@ -132,4 +137,5 @@ backBtn.addEventListener("click", () => {
     scroll.style.scrollBehavior = "smooth";
     scroll.scrollLeft -= 900;
 });
+
 

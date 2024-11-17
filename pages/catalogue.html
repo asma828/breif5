@@ -5,60 +5,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://atugatran.github.io/FontAwesome6Pro/css/all.min.css">
     <title>Document</title>
     <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="promotion.css">
 </head>
 
 <body>
     <header>
         <nav>
             <div id="nav" class="flex w-screen h-20 bg-merrakchi justify-around items-center">
-                <div>
-                    <img src="../images/logo.png" alt="logo">
+                <button id="burger_button" class="text-3xl burgerbutton white md:hidden">&#9776;</button>
+                <div class="h-[70px]">
+                    <img src="../images/logo_mobile.png" alt="logo" class="w-full h-full object-contain">
                 </div>
-                <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
-                    <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
-                    <i
-                        class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                <div class="hidden md:block">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
                 </div>
-                <div class="w-40  flex justify-around">
+                <div class="w-40 flex justify-around">
                     <i class="fa-solid fa-heart text-2xl text-white"></i>
                     <i class="fa-solid fa-user text-2xl text-white"></i>
-                    <button>
+                    <button id="cartIcon">
                         <i class="fa-solid fa-cart-shopping text-2xl text-white"></i>
                     </button>
                 </div>
             </div>
             <div id="#nav_ico" class="w-screen h-12 bg-gray-200 flex justify-around items-center font-bold relative">
-                <a class="hover:text-orange-400 tr" href="#">HOME</a>
-                <a class="hover:text-orange-400" href="#">PROMOTIONS</a>
-                <a class="hover:text-orange-400" href="#">CATALOGUE</a>
-                <a class="hover:text-orange-400" href="#">CONTACT US</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">HOME</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CONTACT US</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">CATALOGUE</a>
+                <a class="hidden md:block hover:text-orange-400" href="#">PROMOTIONS</a>
+                <div class="block md:hidden">
+                    <div class="lg:w-[500px] h-10 bg-white flex items-center justify-between pl-6 pr-6 rounded-lg">
+                        <input class="bg-none outline-none border-none w-full" type="search" placeholder="Search...">
+                        <i
+                            class="fa-solid fa-magnifying-glass w-14 h-6 rounded-lg flex items-center justify-center text-white bg-orange-500 opacity-75"></i>
+                    </div>
+                </div>
             </div>
         </nav>
+        <!-- burger menu -->
+        <!-- CartPanier -->
+        <div id="cart"
+            class="fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Mon Panier</h2>
+                <button id="closeCart" class="text-2xl font-bold">&times;</button>
+            </div>
+            <div id="cartItems" class="p-4">
+                <p id="emptyCartMessage" class="text-gray-500">Votre panier est vide.</p>
+            </div>
+            <div class="p-4 border-t flex justify-between">
+                <p>Total produits: <span id="cartTotalQuantity">0</span></p>
+                <p>Total: <span id="cartTotal">$0.00</span></p>
+            </div>
+            <div class="p-4">
+                <button id="buyButton" class="bg-blue-500 text-white px-4 py-2 rounded">Acheter</button>
+            </div>
+        </div>
+        <!-- CartPanier end  -->
+        <div id="menu_burger"
+            class="fixed inset-0 bg-slate-700  text-white hidden z-50 flex flex-col items-center justify-center space-y-6">
+            <button id="button_to_close" class="absolute top-5 right-5 text-3xl text-white">&#10005;</button>
+            <a href="#" class="text-xl hover:text-orange-500">HOME</a>
+            <a href="#" class="text-xl hover:text-orange-500">CONTACT US</a>
+            <a href="#" class="text-xl hover:text-orange-500">CATALOGUE</a>
+            <a href="#" class="text-xl hover:text-orange-500">PROMOTIONS</a>
+        </div>
     </header>
-    <section id="hero" class="flex justify-between items-center h-[35vh] mx-4 relative ">
+    <section id="hero" class="flex justify-between items-center h-[65vh] mx-4 relative ">
         <div class="rounded-full border-solid border-black border-2 bg-[#FFFFFF] w-12 h-[7vh] pt-[11px] pl-[7px] z-10 opacity-50 ml-4 cursor-pointer"
             id="leftArrow">
-            <i class="fa-solid fa-arrow-left fa-2xl"></i>
+            <i class="fa-solid fa-arrow-left fa-2xl cursor-pointer"></i>
         </div>
         <!-- I've spent 4 hours to finde the solution for one smole problem  -->
         <div class="absolute w-full overflow-x-scroll whitespace-nowrap no-scrollbar h-full " id="sliderContainer">
             <img id="TheSlider" alt="image Slider" class="-z-10 w-full object-fill inline-block h-full"
                 src="https://assetsio.gnwcdn.com/nvidia-geforce-rtx-4090-gpu.png?width=690&quality=75&format=jpg&auto=webp">
             <img id="TheSlider" alt="image Slider" class="-z-10 w-full object-fill inline-block h-full"
-                src="https://assetsio.gnwcdn.com/nvidia-geforce-rtx-4090-gpu.png?width=690&quality=75&format=jpg&auto=webp">
+                src="https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/10%20Best%20Free%20Online%20Word%20Games%20for%2020221646325188851344.jpg">
             <img id="TheSlider" alt="image Slider" class="-z-10 w-full object-fill inline-block h-full"
                 src="https://assetsio.gnwcdn.com/nvidia-geforce-rtx-4090-gpu.png?width=690&quality=75&format=jpg&auto=webp">
         </div>
         <div class="rounded-full border-solid border-black border-2 bg-[#FFFFFF] w-12 h-[7vh] pt-[11px] pl-[7px] z-10 opacity-50 mr-4 cursor-pointer"
             id="rightArrow">
-            <i class="fa-solid fa-arrow-right fa-2xl "></i>
+            <i class="fa-solid fa-arrow-right fa-2xl cursor-pointer"></i>
         </div>
     </section>
+
+    <!-- select and list/gred -->
+    <section class="flex justify-between my-[1em] h-10 px-14 ">
+        <select id="filter" class="w-40 rounded-lg border-black border-2 ">
+            <option value="Electronics" selected>Electronics</option>
+            <option value="Food">Food</option>
+            <option value="clothes">clothes</option>
+            <option value="Bookes">Bookes</option>
+        </select>
+        <div>
+            <i class="fa-solid fa-bars fa-xl" id="list"></i>
+            <i class="fa-solid fa-grid fa-xl" id="grid"></i>
+        </div>
+    </section>
+    <!-- the catigorys -->
+    <section>
+        <div id="Electronics" class="">
+            <div id="gategoryTitles" class="px-10 flex justify-between items-center ">
+                <div id="title"
+                    class="border-black rounded-full border-2 overflow-hidden w-10 h-10 flex justify-center items-center  ">
+                    <img src="https://icons.veryicon.com/png/o/construction-tools/engineering-physics-color-icon/electronics.png"
+                        alt="catigoryIcone" class="rounded-lg w-1/2 h-1/2">
+                </div>
+                <div class="bg-[#D9E4EC]">
+                    <p class="px-4 py-1 text-lg font-bold" id="gategoryTitle">Electronics</p>
+                </div>
+                <div id="line" class="bg-black w-[80%] h-1 ">
+                </div>
+            </div>
+            <div id="cards" class="flex flex-wrap justify-center ">
+                <!-- horezontal card -->
+                <div class="bg-white min-w-[265px] w-[45%]  flex  justify-around items-center h-[350px] m-3 rounded-lg">
+                    <div class="w-2/5">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFERHpzD5SKYqLQmYyrn0yOnqWy-ocwm5s9w&s"
+                            alt="" class="h-full w-full">
+                    </div>
+                    <div class="flex justify-around flex-col h-20">
+                        <div>
+                            Organic Instant 10 in 1 Mushroom
+                        </div>
+                        <div class="w-full flex justify-between">
+                            <div class="text-orange-400">
+                                $19.99
+                            </div>
+                            <button>
+                                <div
+                                    class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    <p>add to cart</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- vertical cardes -->
+            <!-- <div
+                class="bg-white min-w-[265px] w-[265px]  flex flex-col justify-around items-center h-[350px] m-3 rounded-lg">
+                <div>
+                    <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/flat-white-3402c4f.jpg?quality=90&resize=500,454" alt="">
+                </div>
+                <div class="flex justify-around flex-col h-20">
+                    <div>
+                        Organic Instant 10 in 1 Mushroom
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="text-orange-400">
+                            $19.99
+                        </div>
+                        <button>
+                            <div
+                                class="w-32 h-8 bg-orange-400 rounded-lg text-white flex justify-around items-center text-sm">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                <p>add to cart</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div id="Food" class="">
+            <div id="gategoryTitles" class="px-10 flex justify-between items-center ">
+                <div id="title"
+                    class="border-black rounded-full border-2 overflow-hidden w-10 h-10 flex justify-center items-center  ">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStOB26e6FqhS8YWtkvN0L3cbFpupGF5VN8XA&s"
+                        alt="catigoryIcone" class="rounded-lg w-1/2 h-1/2">
+                </div>
+                <div class="bg-[#D9E4EC]">
+                    <p class="px-4 py-1 text-lg font-bold" id="gategoryTitle">Food</p>
+                </div>
+                <div id="line" class="bg-black w-[80%] h-1 ">
+                </div>
+            </div>
+            <div id="cards" class="flex flex-wrap justify-center ">
+
+            </div>
+        </div>
+        <div id="Bookes" class="">
+            <div id="gategoryTitles" class="px-10 flex justify-between items-center ">
+                <div id="title"
+                    class="border-black rounded-full border-2 overflow-hidden w-10 h-10 flex justify-center items-center  ">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5078/5078755.png" alt="catigoryIcone"
+                        class="rounded-lg w-1/2 h-1/2">
+                </div>
+                <div class="bg-[#D9E4EC]">
+                    <p class="px-4 py-1 text-lg font-bold" id="gategoryTitle">Books</p>
+                </div>
+                <div id="line" class="bg-black w-[80%] h-1 ">
+                </div>
+            </div>
+            <div id="cards" class="flex flex-wrap justify-center ">
+                <!-- horezontal card -->
+
+            </div>
+        </div>
+        <div id="Clothes" class="">
+            <div id="gategoryTitles" class="px-10 flex justify-between items-center ">
+                <div id="title"
+                    class="border-black rounded-full border-2 overflow-hidden w-10 h-10 flex justify-center items-center  ">
+                    <img src="https://cdn-icons-png.flaticon.com/512/925/925072.png" alt="catigoryIcone"
+                        class="rounded-lg w-1/2 h-1/2">
+                </div>
+                <div class="bg-[#D9E4EC]">
+                    <p class="px-4 py-1 text-lg font-bold" id="gategoryTitle">clothes</p>
+                </div>
+                <div id="line" class="bg-black w-[80%] h-1 ">
+                </div>
+            </div>
+            <div id="cards" class="flex flex-wrap justify-center ">
+
+            </div>
+        </div>
+    </section>
+    <!-- number of pages -->
+    <div id="NOP" class="flex justify-center items-center my-12">
+        <i class="fa-solid fa-less-than fa-2xl"></i>
+        <div id="numbers"></div>
+        <i class="fa-solid fa-greater-than fa-2xl" id="next"></i>
+    </div>
     <!-- footer section  -->
     <footer class="bg-[#2e5163] text-gray-200 py-12">
         <div
@@ -103,7 +279,7 @@
         </div>
     </footer>
     <script src="../js/catalogue.js"></script>
-
+    <script src="../js/panier.js"></script>
 </body>
 
 </html>
